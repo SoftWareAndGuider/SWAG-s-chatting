@@ -14,31 +14,9 @@ namespace SWAG_s_chatting
         {
             InitializeComponent();
         }
-        private void InserdID_Enter(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text))
-            { }
-            else
-            {
-                task();
-            }
-        }
-
         private void Login_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text))
-            { }
-            else
-            {
-                task();
-            }
-        }
-
-        private void InsertPW_Enter(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text))
-            { }
-            else
+            if (!(String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text)))
             {
                 task();
             }
@@ -78,6 +56,28 @@ namespace SWAG_s_chatting
             catch
             {
                 MessageBox.Show("You don't have your ID.", "Please sign up");
+            }
+        }
+
+        private void InsertPW_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!(String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text)))
+                {
+                    task();
+                }
+            }
+        }
+
+        private void InsertID_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!(String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text)))
+                {
+                    task();
+                }
             }
         }
     }

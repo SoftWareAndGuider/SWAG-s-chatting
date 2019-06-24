@@ -26,5 +26,20 @@ namespace SWAG_s_chatting
         {
             Application.Exit();
         }
+
+        private void Go_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(InsertURL.Text);
+        }
+
+        private void Next_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoForward();
+        }
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            webBrowser1.GoBack();
+        }
     }
 }

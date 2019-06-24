@@ -82,7 +82,7 @@
             this.InsertID.UseSelectable = true;
             this.InsertID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InsertID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.InsertID.Enter += new System.EventHandler(this.InserdID_Enter);
+            this.InsertID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InsertID_KeyDown);
             // 
             // InsertPW
             // 
@@ -114,7 +114,7 @@
             this.InsertPW.UseSelectable = true;
             this.InsertPW.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InsertPW.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.InsertPW.Enter += new System.EventHandler(this.InsertPW_Enter);
+            this.InsertPW.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InsertPW_KeyDown);
             // 
             // metroButton1
             // 
