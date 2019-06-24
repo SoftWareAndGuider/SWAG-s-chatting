@@ -1,0 +1,28 @@
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.csprojAssemblyReference.cache
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG_s_chatting.Properties.Resources.resources
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.csproj.GenerateResource.cache
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.csproj.CoreCompileInputs.cache
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\SWAG's chatting.exe.config
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\SWAG's chatting.exe
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\SWAG's chatting.pdb
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.exe
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.pdb
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\MetroFramework.Design.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\MetroFramework.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\Newtonsoft.Json.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\Newtonsoft.Json.xml
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.csproj.CopyComplete
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\FireSharp.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG_s_chatting.Mainform.resources
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-Chatting\sources\SWAG's chatting\obj\Debug\SWAG_s_chatting.LoginForm.resources
