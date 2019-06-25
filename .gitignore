@@ -2,3 +2,5 @@
 *.lock
 *.ide
 sources/SWAG's chatting/bin/Debug/URL.txt
+*.ide-wal
+*.ide-shm

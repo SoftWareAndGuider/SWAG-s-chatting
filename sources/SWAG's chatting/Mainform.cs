@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
 
 namespace SWAG_s_chatting
 {
     public partial class Mainform : MetroFramework.Forms.MetroForm
     {
+        string url = System.IO.File.ReadAllText("URL.txt");
+        WebClient client = new WebClient();
         public Mainform()
         {
             InitializeComponent();
@@ -19,7 +16,12 @@ namespace SWAG_s_chatting
 
         private void Mainform_Load(object sender, EventArgs e)
         {
-
+            string download = client.DownloadString(url);
+            JObject ids = JObject.Parse(download);
+            foreach(var id in ids)
+            {
+                Users.Items.Add(id.Key);
+            }
         }
 
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
