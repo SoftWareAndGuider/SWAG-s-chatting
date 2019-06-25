@@ -9,7 +9,7 @@ namespace SWAG_s_chatting
 {
     public partial class LoginForm : Form
     {
-        string url = "https://api.myjson.com/bins/sbmn9";
+        string url = System.IO.File.ReadAllText("URL.txt");
         public LoginForm()
         {
             InitializeComponent();
@@ -78,6 +78,38 @@ namespace SWAG_s_chatting
                 {
                     task();
                 }
+            }
+        }
+
+        private void MetroButton1_Click(object sender, EventArgs e)
+        {
+            if (!(String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text)))
+            {
+                WebClient client = new WebClient();
+                string download = client.DownloadString(url);
+                JObject ids = JObject.Parse(download);
+                try
+                {
+                    string test = ids[InsertID.Text][0].ToString();
+                    MessageBox.Show("This ID is overlap","Overlap");
+                }
+                catch
+                {
+                    string password = gotohash(InsertPW.Text);
+                    JArray jArray = new JArray();
+                    jArray.Add(password);
+                    jArray.Add(false);
+                    ids.Add(InsertID.Text, jArray);
+                    string upload = ids.ToString();
+                    client.Headers.Add("Content-Type", "application/json");
+                    client.UploadString(url,"Put",upload);
+                    MessageBox.Show("Your ID is made", "Complete");
+                    task();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Insert your ID or Password","Null");
             }
         }
     }

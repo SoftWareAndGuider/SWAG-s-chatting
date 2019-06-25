@@ -45,7 +45,7 @@
             this.Login.Location = new System.Drawing.Point(232, 12);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(113, 52);
-            this.Login.TabIndex = 0;
+            this.Login.TabIndex = 2;
             this.Login.Text = "Login";
             this.Login.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Login.UseCustomBackColor = true;
@@ -77,7 +77,7 @@
             this.InsertID.SelectionStart = 0;
             this.InsertID.ShortcutsEnabled = true;
             this.InsertID.Size = new System.Drawing.Size(214, 23);
-            this.InsertID.TabIndex = 1;
+            this.InsertID.TabIndex = 0;
             this.InsertID.Theme = MetroFramework.MetroThemeStyle.Light;
             this.InsertID.UseSelectable = true;
             this.InsertID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -109,7 +109,7 @@
             this.InsertPW.SelectionStart = 0;
             this.InsertPW.ShortcutsEnabled = true;
             this.InsertPW.Size = new System.Drawing.Size(214, 23);
-            this.InsertPW.TabIndex = 2;
+            this.InsertPW.TabIndex = 1;
             this.InsertPW.Theme = MetroFramework.MetroThemeStyle.Light;
             this.InsertPW.UseSelectable = true;
             this.InsertPW.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -128,6 +128,7 @@
             this.metroButton1.Text = "Sign Up";
             this.metroButton1.UseCustomBackColor = true;
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // LoginForm
             // 
