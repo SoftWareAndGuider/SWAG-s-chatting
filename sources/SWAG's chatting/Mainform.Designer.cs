@@ -30,19 +30,19 @@
         {
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.Send = new MetroFramework.Controls.MetroButton();
             this.InsertChat = new MetroFramework.Controls.MetroTextBox();
             this.Chats = new MetroFramework.Controls.MetroTextBox();
             this.Users = new System.Windows.Forms.ListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Refresh = new MetroFramework.Controls.MetroButton();
             this.Go = new MetroFramework.Controls.MetroButton();
             this.Next = new MetroFramework.Controls.MetroButton();
             this.Back = new MetroFramework.Controls.MetroButton();
             this.InsertURL = new MetroFramework.Controls.MetroTextBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -57,7 +57,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(21, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(1144, 591);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
@@ -73,29 +73,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1136, 549);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Chatting";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.metroButton2);
-            this.tabPage2.Controls.Add(this.Go);
-            this.tabPage2.Controls.Add(this.Next);
-            this.tabPage2.Controls.Add(this.Back);
-            this.tabPage2.Controls.Add(this.InsertURL);
-            this.tabPage2.Controls.Add(this.webBrowser1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1136, 549);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Browser";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.metroButton1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 38);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1136, 549);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Setting";
             // 
             // Send
             // 
@@ -177,6 +154,31 @@
             this.Users.Size = new System.Drawing.Size(126, 520);
             this.Users.TabIndex = 9;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.Refresh);
+            this.tabPage2.Controls.Add(this.Go);
+            this.tabPage2.Controls.Add(this.Next);
+            this.tabPage2.Controls.Add(this.Back);
+            this.tabPage2.Controls.Add(this.InsertURL);
+            this.tabPage2.Controls.Add(this.webBrowser1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(1136, 549);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Browser";
+            // 
+            // Refresh
+            // 
+            this.Refresh.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.Refresh.Location = new System.Drawing.Point(153, 22);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(65, 25);
+            this.Refresh.TabIndex = 11;
+            this.Refresh.Text = "↻";
+            this.Refresh.UseSelectable = true;
+            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
+            // 
             // Go
             // 
             this.Go.AllowDrop = true;
@@ -253,6 +255,15 @@
             this.webBrowser1.TabIndex = 6;
             this.webBrowser1.Url = new System.Uri("https://www.google.com", System.UriKind.Absolute);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.metroButton1);
+            this.tabPage3.Location = new System.Drawing.Point(4, 38);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1136, 549);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Setting";
+            // 
             // metroButton1
             // 
             this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Tall;
@@ -262,14 +273,7 @@
             this.metroButton1.TabIndex = 0;
             this.metroButton1.Text = "회원탈퇴";
             this.metroButton1.UseSelectable = true;
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(153, 22);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(65, 25);
-            this.metroButton2.TabIndex = 11;
-            this.metroButton2.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // Mainform
             // 
@@ -308,6 +312,6 @@
         private MetroFramework.Controls.MetroTextBox InsertURL;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton metroButton2;
+        private MetroFramework.Controls.MetroButton Refresh;
     }
 }

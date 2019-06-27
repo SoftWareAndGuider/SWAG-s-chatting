@@ -10,6 +10,7 @@ namespace SWAG_s_chatting
     public partial class LoginForm : Form
     {
         string url = System.IO.File.ReadAllText("URL.txt");
+        public static string id;
         public LoginForm()
         {
             InitializeComponent();
@@ -48,6 +49,7 @@ namespace SWAG_s_chatting
                 }
                 else
                 {
+                    LoginForm.id = InsertID.Text;
                     Mainform mainform = new Mainform();
                     mainform.Show();
                     Hide();
