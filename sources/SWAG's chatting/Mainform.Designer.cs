@@ -57,7 +57,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(21, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1144, 591);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
@@ -153,6 +153,7 @@
             this.Users.Name = "Users";
             this.Users.Size = new System.Drawing.Size(126, 520);
             this.Users.TabIndex = 9;
+            this.Users.SelectedIndexChanged += new System.EventHandler(this.Users_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -254,6 +255,7 @@
             this.webBrowser1.Size = new System.Drawing.Size(1098, 479);
             this.webBrowser1.TabIndex = 6;
             this.webBrowser1.Url = new System.Uri("https://www.google.com", System.UriKind.Absolute);
+            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.WebBrowser1_Navigated);
             // 
             // tabPage3
             // 

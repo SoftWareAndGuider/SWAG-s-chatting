@@ -60,5 +60,16 @@ namespace SWAG_s_chatting
             MessageBox.Show("Your ID was removed","Complete");
             Application.Exit();
         }
+
+        private void WebBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            InsertURL.Text = webBrowser1.Url.ToString();
+        }
+
+        private void Users_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string name = Users.SelectedItem.ToString();
+            Chats.Text = name;
+        }
     }
 }

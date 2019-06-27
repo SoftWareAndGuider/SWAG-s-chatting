@@ -25,7 +25,7 @@ namespace SWAG_s_chatting
         private string gotohash(string password)
         {
             byte[] bytearray = Encoding.UTF8.GetBytes(password);
-            var enc = new SHA1CryptoServiceProvider();
+            var enc = new SHA256CryptoServiceProvider();
             var hash = enc.ComputeHash(bytearray);
             StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i < hash.Length; i++)
