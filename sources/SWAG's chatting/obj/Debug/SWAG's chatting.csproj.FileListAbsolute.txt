@@ -54,3 +54,6 @@ C:\Users\배재현\SWAG-s-chatting\sources\SWAG's chatting\obj\Debug\SWAG's chat
 C:\Users\배재현\SWAG-s-chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.csproj.CopyComplete
 C:\Users\배재현\SWAG-s-chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.exe
 C:\Users\배재현\SWAG-s-chatting\sources\SWAG's chatting\obj\Debug\SWAG's chatting.pdb
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Toolkit.Forms.UI.Controls.WebView.dll
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Toolkit.Forms.UI.Controls.WebView.pdb
+C:\Users\hj666\Desktop\프로그래밍\오픈소스 프로젝트\SWAG-s-chatting\sources\SWAG's chatting\bin\Debug\Microsoft.Toolkit.Forms.UI.Controls.WebView.xml

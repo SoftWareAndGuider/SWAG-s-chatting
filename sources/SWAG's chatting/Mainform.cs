@@ -2,6 +2,7 @@
 using System.Net;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
+using Microsoft.Win32;
 
 namespace SWAG_s_chatting
 {
@@ -23,6 +24,7 @@ namespace SWAG_s_chatting
                 Users.Items.Add(id.Key);
             }
             this.id = LoginForm.id;
+            
         }
 
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,22 +34,22 @@ namespace SWAG_s_chatting
 
         private void Go_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(InsertURL.Text);
+            webView1.Navigate(InsertURL.Text);
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
-            webBrowser1.GoForward();
+            webView1.GoForward();
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-            webBrowser1.GoBack();
+            webView1.GoBack();
         }
 
         private void Refresh_Click(object sender, EventArgs e)
         {
-            webBrowser1.Refresh();
+            webView1.Refresh();
         }
 
         private void MetroButton1_Click(object sender, EventArgs e)
@@ -63,7 +65,7 @@ namespace SWAG_s_chatting
 
         private void WebBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-            InsertURL.Text = webBrowser1.Url.ToString();
+            //InsertURL.Text = webView1.;
         }
 
         private void Users_SelectedIndexChanged(object sender, EventArgs e)

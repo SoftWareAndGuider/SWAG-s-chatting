@@ -35,18 +35,19 @@
             this.Chats = new MetroFramework.Controls.MetroTextBox();
             this.Users = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Refresh = new MetroFramework.Controls.MetroButton();
+            this.Reload = new MetroFramework.Controls.MetroButton();
             this.Go = new MetroFramework.Controls.MetroButton();
             this.Next = new MetroFramework.Controls.MetroButton();
             this.Back = new MetroFramework.Controls.MetroButton();
             this.InsertURL = new MetroFramework.Controls.MetroTextBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.webView1 = new Microsoft.Toolkit.Forms.UI.Controls.WebView();
             this.metroTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webView1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -57,7 +58,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(21, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(1144, 591);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
@@ -157,28 +158,28 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.Refresh);
+            this.tabPage2.Controls.Add(this.webView1);
+            this.tabPage2.Controls.Add(this.Reload);
             this.tabPage2.Controls.Add(this.Go);
             this.tabPage2.Controls.Add(this.Next);
             this.tabPage2.Controls.Add(this.Back);
             this.tabPage2.Controls.Add(this.InsertURL);
-            this.tabPage2.Controls.Add(this.webBrowser1);
             this.tabPage2.Location = new System.Drawing.Point(4, 38);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(1136, 549);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Browser";
             // 
-            // Refresh
+            // Reload
             // 
-            this.Refresh.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.Refresh.Location = new System.Drawing.Point(153, 22);
-            this.Refresh.Name = "Refresh";
-            this.Refresh.Size = new System.Drawing.Size(65, 25);
-            this.Refresh.TabIndex = 11;
-            this.Refresh.Text = "↻";
-            this.Refresh.UseSelectable = true;
-            this.Refresh.Click += new System.EventHandler(this.Refresh_Click);
+            this.Reload.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.Reload.Location = new System.Drawing.Point(153, 22);
+            this.Reload.Name = "Reload";
+            this.Reload.Size = new System.Drawing.Size(65, 25);
+            this.Reload.TabIndex = 11;
+            this.Reload.Text = "↻";
+            this.Reload.UseSelectable = true;
+            this.Reload.Click += new System.EventHandler(this.Refresh_Click);
             // 
             // Go
             // 
@@ -244,19 +245,6 @@
             this.InsertURL.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InsertURL.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(17, 51);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1098, 479);
-            this.webBrowser1.TabIndex = 6;
-            this.webBrowser1.Url = new System.Uri("https://www.google.com", System.UriKind.Absolute);
-            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.WebBrowser1_Navigated);
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.metroButton1);
@@ -277,6 +265,19 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
+            // webView1
+            // 
+            this.webView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.webView1.EnterpriseId = "www.google.com";
+            this.webView1.IsScriptNotifyAllowed = true;
+            this.webView1.Location = new System.Drawing.Point(17, 52);
+            this.webView1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webView1.Name = "webView1";
+            this.webView1.Size = new System.Drawing.Size(1098, 476);
+            this.webView1.TabIndex = 12;
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -295,6 +296,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.webView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -312,8 +314,8 @@
         private MetroFramework.Controls.MetroButton Next;
         private MetroFramework.Controls.MetroButton Back;
         private MetroFramework.Controls.MetroTextBox InsertURL;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroButton Refresh;
+        private MetroFramework.Controls.MetroButton Reload;
+        private Microsoft.Toolkit.Forms.UI.Controls.WebView webView1;
     }
 }
