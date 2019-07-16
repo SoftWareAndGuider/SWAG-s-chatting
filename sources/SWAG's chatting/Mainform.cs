@@ -2,7 +2,8 @@
 using System.Net;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
-using Microsoft.Win32;
+using CefSharp;
+using CefSharp.WinForms;
 
 namespace SWAG_s_chatting
 {
@@ -14,6 +15,15 @@ namespace SWAG_s_chatting
         public Mainform()
         {
             InitializeComponent();
+            startchromium();
+        }
+        private void startchromium()
+        {
+            Cef.Initialize(new CefSettings());
+            Browser = new ChromiumWebBrowser("www.google.com");
+            this.panel1.Controls.Add(Browser);
+            Browser.Dock = DockStyle.Fill;
+            Browser.AddressChanged += Browser_ChangeURL;
         }
         private void Mainform_Load(object sender, EventArgs e)
         {
@@ -34,22 +44,22 @@ namespace SWAG_s_chatting
 
         private void Go_Click(object sender, EventArgs e)
         {
-            webView1.Navigate(InsertURL.Text);
+            Browser.Load($"www.google.com/search?q={InsertURL.Text}");
         }
 
         private void Next_Click(object sender, EventArgs e)
         {
-            webView1.GoForward();
+            
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-            webView1.GoBack();
+            Browser.Back();
         }
 
         private void Refresh_Click(object sender, EventArgs e)
         {
-            webView1.Refresh();
+            Browser.Refresh();
         }
 
         private void MetroButton1_Click(object sender, EventArgs e)
@@ -59,19 +69,19 @@ namespace SWAG_s_chatting
             ids.Remove(id);
             client.Headers.Add("Content-Type", "Application/json");
             client.UploadString(url[0], "PUT", ids.ToString());
-            MessageBox.Show("Your ID was removed","Complete");
+            MessageBox.Show("Your ID is removed","Complete");
             Application.Exit();
-        }
-
-        private void WebBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
-        {
-            //InsertURL.Text = webView1.;
         }
 
         private void Users_SelectedIndexChanged(object sender, EventArgs e)
         {
             string name = Users.SelectedItem.ToString();
             Chats.Text = name;
+        }
+
+        private void Browser_ChangeURL(object sender, AddressChangedEventArgs e)
+        {
+            InsertURL.Text = e.Address;
         }
     }
 }

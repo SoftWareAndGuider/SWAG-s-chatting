@@ -50,10 +50,10 @@ namespace SWAG_s_chatting
                 else
                 {
                     LoginForm.id = InsertID.Text;
-                    Mainform mainform = new Mainform();
-                    mainform.Show();
                     Hide();
                 }
+                Mainform mainform = new Mainform();
+                mainform.Show();
             }
             catch
             {

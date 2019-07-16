@@ -29,51 +29,51 @@
         private void InitializeComponent()
         {
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Chatting = new System.Windows.Forms.TabPage();
             this.Send = new MetroFramework.Controls.MetroButton();
             this.InsertChat = new MetroFramework.Controls.MetroTextBox();
             this.Chats = new MetroFramework.Controls.MetroTextBox();
             this.Users = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Internet = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Reload = new MetroFramework.Controls.MetroButton();
             this.Go = new MetroFramework.Controls.MetroButton();
             this.Next = new MetroFramework.Controls.MetroButton();
             this.Back = new MetroFramework.Controls.MetroButton();
             this.InsertURL = new MetroFramework.Controls.MetroTextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.webView1 = new Microsoft.Toolkit.Forms.UI.Controls.WebView();
+            this.Setting = new System.Windows.Forms.TabPage();
+            this.회원탈퇴 = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.webView1)).BeginInit();
+            this.Chatting.SuspendLayout();
+            this.Internet.SuspendLayout();
+            this.Setting.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroTabControl1
             // 
-            this.metroTabControl1.Controls.Add(this.tabPage1);
-            this.metroTabControl1.Controls.Add(this.tabPage2);
-            this.metroTabControl1.Controls.Add(this.tabPage3);
+            this.metroTabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.metroTabControl1.Controls.Add(this.Chatting);
+            this.metroTabControl1.Controls.Add(this.Internet);
+            this.metroTabControl1.Controls.Add(this.Setting);
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(21, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(1144, 591);
+            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.Size = new System.Drawing.Size(1156, 591);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
             // 
-            // tabPage1
+            // Chatting
             // 
-            this.tabPage1.Controls.Add(this.Send);
-            this.tabPage1.Controls.Add(this.InsertChat);
-            this.tabPage1.Controls.Add(this.Chats);
-            this.tabPage1.Controls.Add(this.Users);
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1136, 549);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Chatting";
+            this.Chatting.Controls.Add(this.Send);
+            this.Chatting.Controls.Add(this.InsertChat);
+            this.Chatting.Controls.Add(this.Chats);
+            this.Chatting.Controls.Add(this.Users);
+            this.Chatting.Location = new System.Drawing.Point(4, 41);
+            this.Chatting.Name = "Chatting";
+            this.Chatting.Size = new System.Drawing.Size(1148, 546);
+            this.Chatting.TabIndex = 0;
+            this.Chatting.Text = "채팅";
             // 
             // Send
             // 
@@ -156,24 +156,35 @@
             this.Users.TabIndex = 9;
             this.Users.SelectedIndexChanged += new System.EventHandler(this.Users_SelectedIndexChanged);
             // 
-            // tabPage2
+            // Internet
             // 
-            this.tabPage2.Controls.Add(this.webView1);
-            this.tabPage2.Controls.Add(this.Reload);
-            this.tabPage2.Controls.Add(this.Go);
-            this.tabPage2.Controls.Add(this.Next);
-            this.tabPage2.Controls.Add(this.Back);
-            this.tabPage2.Controls.Add(this.InsertURL);
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1136, 549);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Browser";
+            this.Internet.Controls.Add(this.panel1);
+            this.Internet.Controls.Add(this.Reload);
+            this.Internet.Controls.Add(this.Go);
+            this.Internet.Controls.Add(this.Next);
+            this.Internet.Controls.Add(this.Back);
+            this.Internet.Controls.Add(this.InsertURL);
+            this.Internet.Location = new System.Drawing.Point(4, 41);
+            this.Internet.Name = "Internet";
+            this.Internet.Size = new System.Drawing.Size(1148, 546);
+            this.Internet.TabIndex = 1;
+            this.Internet.Text = "인터넷 브라우저";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
+            this.panel1.Location = new System.Drawing.Point(17, 53);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1116, 490);
+            this.panel1.TabIndex = 12;
             // 
             // Reload
             // 
             this.Reload.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.Reload.Location = new System.Drawing.Point(153, 22);
+            this.Reload.Location = new System.Drawing.Point(153, 20);
             this.Reload.Name = "Reload";
             this.Reload.Size = new System.Drawing.Size(65, 25);
             this.Reload.TabIndex = 11;
@@ -185,17 +196,17 @@
             // 
             this.Go.AllowDrop = true;
             this.Go.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.Go.Location = new System.Drawing.Point(1013, 19);
+            this.Go.Location = new System.Drawing.Point(1032, 20);
             this.Go.Name = "Go";
-            this.Go.Size = new System.Drawing.Size(102, 27);
+            this.Go.Size = new System.Drawing.Size(101, 27);
             this.Go.TabIndex = 10;
-            this.Go.Text = "Go";
+            this.Go.Text = "이동";
             this.Go.UseSelectable = true;
             this.Go.Click += new System.EventHandler(this.Go_Click);
             // 
             // Next
             // 
-            this.Next.Location = new System.Drawing.Point(86, 22);
+            this.Next.Location = new System.Drawing.Point(86, 20);
             this.Next.Name = "Next";
             this.Next.Size = new System.Drawing.Size(60, 25);
             this.Next.TabIndex = 9;
@@ -205,7 +216,7 @@
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(17, 21);
+            this.Back.Location = new System.Drawing.Point(17, 20);
             this.Back.Name = "Back";
             this.Back.Size = new System.Drawing.Size(60, 25);
             this.Back.TabIndex = 8;
@@ -219,9 +230,9 @@
             // 
             // 
             this.InsertURL.CustomButton.Image = null;
-            this.InsertURL.CustomButton.Location = new System.Drawing.Point(761, 1);
+            this.InsertURL.CustomButton.Location = new System.Drawing.Point(757, 1);
             this.InsertURL.CustomButton.Name = "";
-            this.InsertURL.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.InsertURL.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.InsertURL.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.InsertURL.CustomButton.TabIndex = 1;
             this.InsertURL.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -229,7 +240,7 @@
             this.InsertURL.CustomButton.Visible = false;
             this.InsertURL.Lines = new string[] {
         "google.com"};
-            this.InsertURL.Location = new System.Drawing.Point(224, 22);
+            this.InsertURL.Location = new System.Drawing.Point(224, 20);
             this.InsertURL.MaxLength = 32767;
             this.InsertURL.Name = "InsertURL";
             this.InsertURL.PasswordChar = '\0';
@@ -238,51 +249,39 @@
             this.InsertURL.SelectionLength = 0;
             this.InsertURL.SelectionStart = 0;
             this.InsertURL.ShortcutsEnabled = true;
-            this.InsertURL.Size = new System.Drawing.Size(783, 23);
+            this.InsertURL.Size = new System.Drawing.Size(802, 27);
             this.InsertURL.TabIndex = 7;
             this.InsertURL.Text = "google.com";
             this.InsertURL.UseSelectable = true;
             this.InsertURL.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InsertURL.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // tabPage3
+            // Setting
             // 
-            this.tabPage3.Controls.Add(this.metroButton1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 38);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1136, 549);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Setting";
+            this.Setting.Controls.Add(this.회원탈퇴);
+            this.Setting.Location = new System.Drawing.Point(4, 41);
+            this.Setting.Name = "Setting";
+            this.Setting.Size = new System.Drawing.Size(1148, 546);
+            this.Setting.TabIndex = 2;
+            this.Setting.Text = "설정";
             // 
-            // metroButton1
+            // 회원탈퇴
             // 
-            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.metroButton1.Location = new System.Drawing.Point(3, 395);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(1130, 151);
-            this.metroButton1.TabIndex = 0;
-            this.metroButton1.Text = "회원탈퇴";
-            this.metroButton1.UseSelectable = true;
-            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
-            // 
-            // webView1
-            // 
-            this.webView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webView1.EnterpriseId = "www.google.com";
-            this.webView1.IsScriptNotifyAllowed = true;
-            this.webView1.Location = new System.Drawing.Point(17, 52);
-            this.webView1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webView1.Name = "webView1";
-            this.webView1.Size = new System.Drawing.Size(1098, 476);
-            this.webView1.TabIndex = 12;
+            this.회원탈퇴.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.회원탈퇴.Location = new System.Drawing.Point(3, 395);
+            this.회원탈퇴.Name = "회원탈퇴";
+            this.회원탈퇴.Size = new System.Drawing.Size(1130, 151);
+            this.회원탈퇴.TabIndex = 0;
+            this.회원탈퇴.Text = "회원탈퇴";
+            this.회원탈퇴.UseSelectable = true;
+            this.회원탈퇴.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // Mainform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 669);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1198, 669);
             this.Controls.Add(this.metroTabControl1);
             this.Font = new System.Drawing.Font("굴림", 9F);
             this.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
@@ -292,20 +291,20 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
             this.Load += new System.EventHandler(this.Mainform_Load);
             this.metroTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.webView1)).EndInit();
+            this.Chatting.ResumeLayout(false);
+            this.Chatting.PerformLayout();
+            this.Internet.ResumeLayout(false);
+            this.Internet.PerformLayout();
+            this.Setting.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage Chatting;
+        private System.Windows.Forms.TabPage Internet;
+        private System.Windows.Forms.TabPage Setting;
         private MetroFramework.Controls.MetroButton Send;
         private MetroFramework.Controls.MetroTextBox InsertChat;
         private MetroFramework.Controls.MetroTextBox Chats;
@@ -314,8 +313,9 @@
         private MetroFramework.Controls.MetroButton Next;
         private MetroFramework.Controls.MetroButton Back;
         private MetroFramework.Controls.MetroTextBox InsertURL;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton 회원탈퇴;
         private MetroFramework.Controls.MetroButton Reload;
-        private Microsoft.Toolkit.Forms.UI.Controls.WebView webView1;
+        private CefSharp.WinForms.ChromiumWebBrowser Browser;
+        private System.Windows.Forms.Panel panel1;
     }
 }

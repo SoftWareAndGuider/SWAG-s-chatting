@@ -140,7 +140,7 @@
             this.Controls.Add(this.InsertID);
             this.Controls.Add(this.Login);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Login";
             this.ResumeLayout(false);
 
         }
