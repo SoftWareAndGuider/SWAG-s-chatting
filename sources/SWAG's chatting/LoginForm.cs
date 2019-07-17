@@ -45,11 +45,11 @@ namespace SWAG_s_chatting
             {
                 if (ids[ID][0].ToString() != PW)
                 {
-                    MessageBox.Show("Please try again", "Error");
+                    MessageBox.Show("비밀번호를 다시 입력해 주세요", "비밀번호 오류");
                 }
                 else
                 {
-                    LoginForm.id = InsertID.Text;
+                    Mainform.id = InsertID.Text;
                     Hide();
                 }
                 Mainform mainform = new Mainform();
@@ -57,7 +57,7 @@ namespace SWAG_s_chatting
             }
             catch
             {
-                MessageBox.Show("You don't have your ID.", "Please sign up");
+                MessageBox.Show("ID를 만들고 재시도 해주세요", "ID가 없습니다");
             }
         }
 
@@ -93,7 +93,7 @@ namespace SWAG_s_chatting
                 try
                 {
                     string test = ids[InsertID.Text][0].ToString();
-                    MessageBox.Show("This ID is overlap","Overlap");
+                    MessageBox.Show("이 ID는 중복됩니다","중복");
                 }
                 catch
                 {
@@ -105,13 +105,13 @@ namespace SWAG_s_chatting
                     string upload = ids.ToString();
                     client.Headers.Add("Content-Type", "application/json");
                     client.UploadString(url,"Put",upload);
-                    MessageBox.Show("Your ID is made", "Complete");
+                    MessageBox.Show("ID생성이 완료되었습니다", "완료");
                     task();
                 }
             }
             else
             {
-                MessageBox.Show("Please Insert your ID or Password","Null");
+                MessageBox.Show("ID와 비밀번호를 입력 후 재시도 해 주세요","비어 있음");
             }
         }
     }

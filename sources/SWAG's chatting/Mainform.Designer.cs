@@ -43,6 +43,7 @@
             this.InsertURL = new MetroFramework.Controls.MetroTextBox();
             this.Setting = new System.Windows.Forms.TabPage();
             this.회원탈퇴 = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -58,13 +59,14 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(21, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1156, 591);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
             // 
             // Chatting
             // 
+            this.Chatting.Controls.Add(this.metroButton1);
             this.Chatting.Controls.Add(this.Send);
             this.Chatting.Controls.Add(this.InsertChat);
             this.Chatting.Controls.Add(this.Chats);
@@ -230,7 +232,7 @@
             // 
             // 
             this.InsertURL.CustomButton.Image = null;
-            this.InsertURL.CustomButton.Location = new System.Drawing.Point(757, 1);
+            this.InsertURL.CustomButton.Location = new System.Drawing.Point(776, 1);
             this.InsertURL.CustomButton.Name = "";
             this.InsertURL.CustomButton.Size = new System.Drawing.Size(25, 25);
             this.InsertURL.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -276,6 +278,16 @@
             this.회원탈퇴.UseSelectable = true;
             this.회원탈퇴.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
+            // metroButton1
+            // 
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.metroButton1.Location = new System.Drawing.Point(3, 13);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(38, 40);
+            this.metroButton1.TabIndex = 13;
+            this.metroButton1.Text = "+";
+            this.metroButton1.UseSelectable = true;
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -317,5 +329,6 @@
         private MetroFramework.Controls.MetroButton Reload;
         private CefSharp.WinForms.ChromiumWebBrowser Browser;
         private System.Windows.Forms.Panel panel1;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

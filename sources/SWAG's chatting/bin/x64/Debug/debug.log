@@ -1,0 +1,28 @@
+[0710/123913.831:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 25
+[0710/123913.840:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 29
+[0710/123913.843:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 31
+[0710/123913.843:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 33
+[0710/123913.843:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 35
+[0710/123913.967:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 37
+[0710/123913.967:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 39
+[0710/123913.967:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 41
+[0710/123913.967:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 43
+[0710/123913.984:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 45
+[0710/123913.985:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 47
+[0710/123913.985:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 49
+[0710/123913.985:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 51
+[0710/123914.006:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 53
+[0710/123914.007:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 55
+[0710/123914.007:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 57
+[0710/123914.010:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 59
+[0710/123931.717:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 87
+[0710/123932.365:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 89
+[0710/124704.100:WARNING:angle_platform_impl.cc(52)] compileToBinary(233): 
+C:\fakepath(77,10-42): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(99,10-42): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[0710/124837.190:INFO:CONSOLE(0)] "The resource https://pagead2.googlesyndication.com/pagead/js/r20190708/r20190131/show_ads_impl.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
+[0710/124855.318:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0710/124855.324:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0710/124855.328:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0710/124855.328:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/

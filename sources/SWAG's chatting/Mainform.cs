@@ -9,8 +9,8 @@ namespace SWAG_s_chatting
 {
     public partial class Mainform : MetroFramework.Forms.MetroForm
     {
+        public static string id;
         string[] url = System.IO.File.ReadAllLines("URL.txt");
-        string id;
         WebClient client = new WebClient();
         public Mainform()
         {
@@ -33,8 +33,7 @@ namespace SWAG_s_chatting
             {
                 Users.Items.Add(id.Key);
             }
-            this.id = LoginForm.id;
-            
+
         }
 
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
