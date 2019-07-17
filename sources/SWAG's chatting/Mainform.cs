@@ -12,8 +12,8 @@ namespace SWAG_s_chatting
         public static string id;
         private string[] url = System.IO.File.ReadAllLines("URL.txt");
         private WebClient client = new WebClient();
-        private JObject ids = new JObject();
-        private JObject chats = new JObject();
+        private static JObject ids = new JObject();
+        private static JObject chats = new JObject();
 
 
         public Mainform()
@@ -31,9 +31,6 @@ namespace SWAG_s_chatting
         }
         private void Mainform_Load(object sender, EventArgs e)
         {
-            string download = client.DownloadString(url[0]);
-            ids = JObject.Parse(download);
-            chats = JObject.Parse(ids[id]["chatting"].ToString());
             foreach(var id in chats)
             {
                 Users.Items.Add(id.Key);
@@ -68,8 +65,6 @@ namespace SWAG_s_chatting
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            string download = client.DownloadString(url[0]);
-            JObject ids = JObject.Parse(download);
             ids.Remove(id);
             client.Headers.Add("Content-Type", "Application/json");
             client.UploadString(url[0], "PUT", ids.ToString());

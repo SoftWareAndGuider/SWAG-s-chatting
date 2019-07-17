@@ -46,7 +46,7 @@
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(113, 52);
             this.Login.TabIndex = 2;
-            this.Login.Text = "Login";
+            this.Login.Text = "로그인";
             this.Login.Theme = MetroFramework.MetroThemeStyle.Light;
             this.Login.UseCustomBackColor = true;
             this.Login.UseSelectable = true;
@@ -125,7 +125,7 @@
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(113, 52);
             this.metroButton1.TabIndex = 3;
-            this.metroButton1.Text = "Sign Up";
+            this.metroButton1.Text = "회원 가입";
             this.metroButton1.UseCustomBackColor = true;
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
