@@ -10,8 +10,12 @@ namespace SWAG_s_chatting
     public partial class Mainform : MetroFramework.Forms.MetroForm
     {
         public static string id;
-        string[] url = System.IO.File.ReadAllLines("URL.txt");
-        WebClient client = new WebClient();
+        private string[] url = System.IO.File.ReadAllLines("URL.txt");
+        private WebClient client = new WebClient();
+        private JObject ids = new JObject();
+        private JObject chats = new JObject();
+
+
         public Mainform()
         {
             InitializeComponent();
@@ -28,8 +32,9 @@ namespace SWAG_s_chatting
         private void Mainform_Load(object sender, EventArgs e)
         {
             string download = client.DownloadString(url[0]);
-            JObject ids = JObject.Parse(download);
-            foreach(var id in ids)
+            ids = JObject.Parse(download);
+            chats = JObject.Parse(ids[id]["chatting"].ToString());
+            foreach(var id in chats)
             {
                 Users.Items.Add(id.Key);
             }
@@ -68,19 +73,33 @@ namespace SWAG_s_chatting
             ids.Remove(id);
             client.Headers.Add("Content-Type", "Application/json");
             client.UploadString(url[0], "PUT", ids.ToString());
-            MessageBox.Show("Your ID is removed","Complete");
+            MessageBox.Show("당신의 ID가 삭제되었습니다","완료");
             Application.Exit();
         }
 
         private void Users_SelectedIndexChanged(object sender, EventArgs e)
         {
             string name = Users.SelectedItem.ToString();
-            Chats.Text = name;
+            Chats.Text = chats[id]["chatting"][name].ToString();
         }
 
         private void Browser_ChangeURL(object sender, AddressChangedEventArgs e)
         {
             InsertURL.Text = e.Address;
+        }
+
+        private void Timer1_Tick(object sender, EventArgs e)
+        {
+            string download = client.DownloadString(url[0]);
+            ids = JObject.Parse(download);
+            chats = JObject.Parse(ids[id]["chatting"].ToString());
+            foreach (var id in chats)
+            {
+                if (!Users.Items.Contains(id.Key))
+                {
+                    Users.Items.Add(id.Key);
+                }
+            }
         }
     }
 }

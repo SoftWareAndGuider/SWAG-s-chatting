@@ -43,7 +43,7 @@ namespace SWAG_s_chatting
             JObject ids = JObject.Parse(download);
             try
             {
-                if (ids[ID][0].ToString() != PW)
+                if (ids[ID]["Login"][0].ToString() != PW)
                 {
                     MessageBox.Show("비밀번호를 다시 입력해 주세요", "비밀번호 오류");
                 }
@@ -51,9 +51,9 @@ namespace SWAG_s_chatting
                 {
                     Mainform.id = InsertID.Text;
                     Hide();
+                    Mainform mainform = new Mainform();
+                    mainform.Show();
                 }
-                Mainform mainform = new Mainform();
-                mainform.Show();
             }
             catch
             {
@@ -101,7 +101,10 @@ namespace SWAG_s_chatting
                     JArray jArray = new JArray();
                     jArray.Add(password);
                     jArray.Add(false);
-                    ids.Add(InsertID.Text, jArray);
+                    JObject newid = new JObject();
+                    newid.Add("chatting", "");
+                    newid.Add("Login", jArray);
+                    ids.Add(InsertID.Text, newid);
                     string upload = ids.ToString();
                     client.Headers.Add("Content-Type", "application/json");
                     client.UploadString(url,"Put",upload);

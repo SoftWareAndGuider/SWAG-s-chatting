@@ -1,6 +1,7 @@
 *.suo
 *.lock
 *.ide
-sources/SWAG's chatting/bin/Debug/URL.txt
+/sources/SWAG's chatting/bin/Debug/URL.txt
+/sources/SWAG's chatting/bin/x64/Debug/URL.txt
 *.ide-wal
 *.ide-shm

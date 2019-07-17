@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.Chatting = new System.Windows.Forms.TabPage();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.Send = new MetroFramework.Controls.MetroButton();
             this.InsertChat = new MetroFramework.Controls.MetroTextBox();
             this.Chats = new MetroFramework.Controls.MetroTextBox();
@@ -43,7 +45,7 @@
             this.InsertURL = new MetroFramework.Controls.MetroTextBox();
             this.Setting = new System.Windows.Forms.TabPage();
             this.회원탈퇴 = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -76,6 +78,16 @@
             this.Chatting.Size = new System.Drawing.Size(1148, 546);
             this.Chatting.TabIndex = 0;
             this.Chatting.Text = "채팅";
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.metroButton1.Location = new System.Drawing.Point(3, 13);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(38, 40);
+            this.metroButton1.TabIndex = 13;
+            this.metroButton1.Text = "+";
+            this.metroButton1.UseSelectable = true;
             // 
             // Send
             // 
@@ -278,15 +290,11 @@
             this.회원탈퇴.UseSelectable = true;
             this.회원탈퇴.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
-            // metroButton1
+            // timer1
             // 
-            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.metroButton1.Location = new System.Drawing.Point(3, 13);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(38, 40);
-            this.metroButton1.TabIndex = 13;
-            this.metroButton1.Text = "+";
-            this.metroButton1.UseSelectable = true;
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // Mainform
             // 
@@ -330,5 +338,6 @@
         private CefSharp.WinForms.ChromiumWebBrowser Browser;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
