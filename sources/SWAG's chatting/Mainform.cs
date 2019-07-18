@@ -84,18 +84,18 @@ namespace SWAG_s_chatting
             client.Encoding = Encoding.UTF8;
             string download = client.DownloadString(url[0]);
             ids = JObject.Parse(download);
-            chats = JObject.Parse(ids["Chattings"][0].ToString());
+            chats = JObject.Parse(ids["Chattings"].ToString());
             int i = 0;
             foreach (var id in chats)
             {
                 try
                 {
-                    chattings.Add(i, id.Value);
+                    chattings.Add(i, id.Value[0]);
                     Users.Items.Add(id.Key);
                 }
                 catch
                 {
-                    chattings[i] = id.Value;
+                    chattings[i] = id.Value[0];
                 }
                 i++;
             }
