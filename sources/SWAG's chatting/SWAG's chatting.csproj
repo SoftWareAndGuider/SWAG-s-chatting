@@ -165,6 +165,12 @@
     <Compile Include="Mainform.Designer.cs">
       <DependentUpon>Mainform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Makeform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Makeform.Designer.cs">
+      <DependentUpon>Makeform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">

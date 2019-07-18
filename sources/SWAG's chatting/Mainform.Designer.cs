@@ -308,9 +308,8 @@
             this.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.Name = "Mainform";
             this.Padding = new System.Windows.Forms.Padding(21, 60, 21, 18);
-            this.Text = "Mainform";
+            this.Text = "채팅창";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
-            this.Load += new System.EventHandler(this.Mainform_Load);
             this.metroTabControl1.ResumeLayout(false);
             this.Chatting.ResumeLayout(false);
             this.Chatting.PerformLayout();

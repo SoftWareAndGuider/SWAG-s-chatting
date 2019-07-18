@@ -9,11 +9,13 @@ namespace SWAG_s_chatting
 {
     public partial class LoginForm : Form
     {
+        WebClient client = new WebClient();
         string url = System.IO.File.ReadAllText("URL.txt");
         public static string id;
         public LoginForm()
         {
             InitializeComponent();
+            client.Encoding = Encoding.UTF8;
         }
         private void Login_Click(object sender, EventArgs e)
         {
@@ -38,12 +40,11 @@ namespace SWAG_s_chatting
         {
             string ID = InsertID.Text;
             string PW = gotohash(InsertPW.Text);
-            WebClient client = new WebClient();
             string download = client.DownloadString(url);
             JObject ids = JObject.Parse(download);
             try
             {
-                if (ids[ID]["Login"][0].ToString() != PW)
+                if (ids["Users"][ID]["Login"][0].ToString() != PW)
                 {
                     MessageBox.Show("비밀번호를 다시 입력해 주세요", "비밀번호 오류");
                 }
@@ -87,12 +88,11 @@ namespace SWAG_s_chatting
         {
             if (!(String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text)))
             {
-                WebClient client = new WebClient();
                 string download = client.DownloadString(url);
                 JObject ids = JObject.Parse(download);
                 try
                 {
-                    string test = ids[InsertID.Text][0].ToString();
+                    string test = ids["Users"][InsertID.Text][0].ToString();
                     MessageBox.Show("이 ID는 중복됩니다","중복");
                 }
                 catch

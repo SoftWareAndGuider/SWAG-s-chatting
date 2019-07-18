@@ -31,14 +31,6 @@ namespace SWAG_s_chatting
             Browser.Dock = DockStyle.Fill;
             Browser.AddressChanged += Browser_ChangeURL;
         }
-        private void Mainform_Load(object sender, EventArgs e)
-        {
-            foreach(var id in chats)
-            {
-                Users.Items.Add(id.Key);
-            }
-
-        }
 
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -52,7 +44,7 @@ namespace SWAG_s_chatting
 
         private void Next_Click(object sender, EventArgs e)
         {
-            
+            Browser.Forward();
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -62,7 +54,7 @@ namespace SWAG_s_chatting
 
         private void Refresh_Click(object sender, EventArgs e)
         {
-            Browser.Refresh();
+            Browser.Load(InsertURL.Text);
         }
 
         private void MetroButton1_Click(object sender, EventArgs e)
@@ -90,7 +82,7 @@ namespace SWAG_s_chatting
             client.Encoding = Encoding.UTF8;
             string download = client.DownloadString(url[0]);
             ids = JObject.Parse(download);
-            chats = JObject.Parse(ids[id]["chatting"].ToString());
+            chats = JObject.Parse(ids["Chattings"].ToString());
             int i = 0;
             foreach (var id in chats)
             {
@@ -115,11 +107,15 @@ namespace SWAG_s_chatting
 
         private void Send_Click(object sender, EventArgs e)
         {
-            string send = $"{Chats.Text}{id}\r\n{InsertChat.Text}\r\n\r\n";
+            SendMessage();
+        }
+        private void SendMessage()
+        {
+            string send = $"{Chats.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{InsertChat.Text}\r\n\r\n";
             try
             {
                 chats[Users.SelectedItem] = send;
-                ids[id]["chatting"] = chats;
+                ids["Chattings"] = chats;
                 client.Encoding = Encoding.UTF8;
                 client.Headers.Add("Content-Type", "application/json");
                 client.UploadString(url[0], "PUT", ids.ToString());
