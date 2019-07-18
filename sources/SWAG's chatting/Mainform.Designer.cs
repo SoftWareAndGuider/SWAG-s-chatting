@@ -150,6 +150,7 @@
             this.Chats.Multiline = true;
             this.Chats.Name = "Chats";
             this.Chats.PasswordChar = '\0';
+            this.Chats.ReadOnly = true;
             this.Chats.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.Chats.SelectedText = "";
             this.Chats.SelectionLength = 0;

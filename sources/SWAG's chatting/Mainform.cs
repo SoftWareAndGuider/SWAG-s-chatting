@@ -17,6 +17,8 @@ namespace SWAG_s_chatting
         private static JObject ids = new JObject();
         private static JObject chats = new JObject();
         private static Hashtable chattings = new Hashtable();
+        LoginForm Login = new LoginForm();
+        Makeform Make = new Makeform();
 
         public Mainform()
         {
@@ -82,7 +84,7 @@ namespace SWAG_s_chatting
             client.Encoding = Encoding.UTF8;
             string download = client.DownloadString(url[0]);
             ids = JObject.Parse(download);
-            chats = JObject.Parse(ids["Chattings"].ToString());
+            chats = JObject.Parse(ids["Chattings"][0].ToString());
             int i = 0;
             foreach (var id in chats)
             {

@@ -24,7 +24,7 @@ namespace SWAG_s_chatting
                 task();
             }
         }
-        private string gotohash(string password)
+        public string gotohash(string password)
         {
             byte[] bytearray = Encoding.UTF8.GetBytes(password);
             var enc = new SHA256CryptoServiceProvider();
