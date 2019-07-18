@@ -144,3 +144,75 @@ a=ssrc:3717450374 mslabel:-
 a=ssrc:3717450374 label:
 
 [0718/123423.184:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.
+[0718/172340.141:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 104 to 127
+[0718/172340.142:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 106 to 125
+[0718/172340.142:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 110 to 124
+[0718/172340.142:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 103 to 123
+[0718/172340.142:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 105 to 122
+[0718/172340.142:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 109 to 121
+[0718/172340.592:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0718/172340.597:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0718/172340.609:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0718/172340.609:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0718/172340.609:ERROR:rtc_peer_connection_handler.cc(2225)] Failed to create native session description. Type: offer SDP: v=0
+o=- 6381235440797283889 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0
+a=msid-semantic: WMS
+m=application 9 UDP/TLS/RTP/SAVPF 121
+c=IN IP4 0.0.0.0
+b=AS:30
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:IPxG
+a=ice-pwd:f7x7Qd4rrZy7JQBxlolDIa6h
+a=ice-options:trickle
+a=fingerprint:sha-256 C0:90:2D:42:4F:E8:A6:5F:DD:80:A1:E7:F8:BD:B7:67:7A:30:48:1B:C8:5F:6C:CA:AA:6A:C6:40:2D:F9:F4:C9
+a=setup:actpass
+a=mid:0
+a=sendrecv
+a=msid: 
+a=rtcp-mux
+a=rtpmap:121 google-data/90000
+a=ssrc:79786473 cname:77DsaePJO1+mKWC7
+a=ssrc:79786473 msid:- 
+a=ssrc:79786473 mslabel:-
+a=ssrc:79786473 label:
+
+[0718/172340.609:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.
+[0718/174543.335:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 104 to 127
+[0718/174543.337:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 106 to 125
+[0718/174543.337:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 110 to 124
+[0718/174543.337:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 103 to 123
+[0718/174543.337:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 105 to 122
+[0718/174543.337:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 109 to 121
+[0718/174544.347:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0718/174544.347:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0718/174544.348:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0718/174544.348:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0718/174544.348:ERROR:rtc_peer_connection_handler.cc(2225)] Failed to create native session description. Type: offer SDP: v=0
+o=- 8611157381277803799 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0
+a=msid-semantic: WMS
+m=application 9 UDP/TLS/RTP/SAVPF 121
+c=IN IP4 0.0.0.0
+b=AS:30
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:aCSu
+a=ice-pwd:8v0DxU6E/lpV2U8PeDh5aDXN
+a=ice-options:trickle
+a=fingerprint:sha-256 4A:F6:F1:8E:85:FB:EE:6E:3A:44:F8:24:F4:B9:CB:8D:68:09:55:9C:C1:36:02:CD:12:D9:93:33:42:AD:88:2F
+a=setup:actpass
+a=mid:0
+a=sendrecv
+a=msid: 
+a=rtcp-mux
+a=rtpmap:121 google-data/90000
+a=ssrc:3598109062 cname:7OEtkEk/lO9CyUaS
+a=ssrc:3598109062 msid:- 
+a=ssrc:3598109062 mslabel:-
+a=ssrc:3598109062 label:
+
+[0718/174544.348:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.

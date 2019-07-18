@@ -57,6 +57,7 @@ namespace SWAG_s_chatting
         private void Refresh_Click(object sender, EventArgs e)
         {
             Browser.Load(InsertURL.Text);
+            Browser.Back();
         }
 
         private void MetroButton1_Click(object sender, EventArgs e)
@@ -125,8 +126,14 @@ namespace SWAG_s_chatting
             }
             catch
             {
-                MessageBox.Show("메세지를 보낼 사람을 입력해 주세요");
+                MessageBox.Show("메세지를 보낼 사람을 선택해 주세요");
             }
+        }
+
+        private void MetroButton1_Click_1(object sender, EventArgs e)
+        {
+            Makeform makeform = new Makeform();
+            makeform.Show();
         }
     }
 }

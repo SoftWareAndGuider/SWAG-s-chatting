@@ -88,6 +88,7 @@
             this.metroButton1.TabIndex = 13;
             this.metroButton1.Text = "+";
             this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click_1);
             // 
             // Send
             // 

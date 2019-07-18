@@ -9,5 +9,19 @@ namespace SWAG_s_chatting
         {
             InitializeComponent();
         }
+
+        private void Make_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Make.Checked)
+            {
+                MakePanel.Show();
+                InsertPanel.Hide();
+            }
+            else
+            {
+                MakePanel.Hide();
+                InsertPanel.Show();
+            }
+        }
     }
 }
