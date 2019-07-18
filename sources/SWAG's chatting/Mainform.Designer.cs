@@ -98,6 +98,7 @@
             this.Send.TabIndex = 12;
             this.Send.Text = "Send";
             this.Send.UseSelectable = true;
+            this.Send.Click += new System.EventHandler(this.Send_Click);
             // 
             // InsertChat
             // 

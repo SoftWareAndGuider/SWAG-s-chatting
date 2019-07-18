@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Text;
 using System.Collections;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
@@ -12,7 +13,7 @@ namespace SWAG_s_chatting
     {
         public static string id;
         private string[] url = System.IO.File.ReadAllLines("URL.txt");
-        private WebClient client = new WebClient();
+        private static WebClient client = new WebClient();
         private static JObject ids = new JObject();
         private static JObject chats = new JObject();
         private static Hashtable chattings = new Hashtable();
@@ -86,6 +87,7 @@ namespace SWAG_s_chatting
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
+            client.Encoding = Encoding.UTF8;
             string download = client.DownloadString(url[0]);
             ids = JObject.Parse(download);
             chats = JObject.Parse(ids[id]["chatting"].ToString());
@@ -109,6 +111,24 @@ namespace SWAG_s_chatting
                 Chats.Text = chattings[Users.SelectedIndex].ToString();
             }
             catch { }
+        }
+
+        private void Send_Click(object sender, EventArgs e)
+        {
+            string send = $"{Chats.Text}{id}\r\n{InsertChat.Text}\r\n\r\n";
+            try
+            {
+                chats[Users.SelectedItem] = send;
+                ids[id]["chatting"] = chats;
+                client.Encoding = Encoding.UTF8;
+                client.Headers.Add("Content-Type", "application/json");
+                client.UploadString(url[0], "PUT", ids.ToString());
+                InsertChat.Text = "";
+            }
+            catch
+            {
+                MessageBox.Show("메세지를 보낼 사람을 입력해 주세요");
+            }
         }
     }
 }
