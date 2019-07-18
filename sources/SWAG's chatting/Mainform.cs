@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using System.Collections;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using CefSharp;
@@ -14,7 +15,7 @@ namespace SWAG_s_chatting
         private WebClient client = new WebClient();
         private static JObject ids = new JObject();
         private static JObject chats = new JObject();
-
+        private static Hashtable chattings = new Hashtable();
 
         public Mainform()
         {
@@ -75,7 +76,7 @@ namespace SWAG_s_chatting
         private void Users_SelectedIndexChanged(object sender, EventArgs e)
         {
             string name = Users.SelectedItem.ToString();
-            Chats.Text = chats[id]["chatting"][name].ToString();
+            Chats.Text = chattings[Users.SelectedIndex].ToString();
         }
 
         private void Browser_ChangeURL(object sender, AddressChangedEventArgs e)
@@ -88,13 +89,26 @@ namespace SWAG_s_chatting
             string download = client.DownloadString(url[0]);
             ids = JObject.Parse(download);
             chats = JObject.Parse(ids[id]["chatting"].ToString());
+            int i = 0;
             foreach (var id in chats)
             {
-                if (!Users.Items.Contains(id.Key))
+                try
                 {
+                    chattings.Add(i, id.Value);
                     Users.Items.Add(id.Key);
                 }
+                catch
+                {
+                    chattings[i] = id.Value;
+                }
+                i++;
             }
+            try
+            {
+                string name = Users.SelectedItem.ToString();
+                Chats.Text = chattings[Users.SelectedIndex].ToString();
+            }
+            catch { }
         }
     }
 }
