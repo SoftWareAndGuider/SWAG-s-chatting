@@ -12,10 +12,10 @@ namespace SWAG_s_chatting
     public partial class Mainform : MetroFramework.Forms.MetroForm
     {
         public static string id;
-        private string[] url = System.IO.File.ReadAllLines("URL.txt");
+        private string url = System.IO.File.ReadAllText("URL.txt");
         private static WebClient client = new WebClient();
         private static JObject ids = new JObject();
-        private static JObject chats = new JObject();
+        private static JArray chats = new JArray();
         private static Hashtable chattings = new Hashtable();
         LoginForm Login = new LoginForm();
         Makeform Make = new Makeform();
@@ -64,7 +64,7 @@ namespace SWAG_s_chatting
         {
             ids.Remove(id);
             client.Headers.Add("Content-Type", "Application/json");
-            client.UploadString(url[0], "PUT", ids.ToString());
+            client.UploadString(url, "PUT", ids.ToString());
             MessageBox.Show("당신의 ID가 삭제되었습니다","완료");
             Application.Exit();
         }
@@ -82,30 +82,37 @@ namespace SWAG_s_chatting
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            client.Encoding = Encoding.UTF8;
-            string download = client.DownloadString(url[0]);
-            ids = JObject.Parse(download);
-            chats = JObject.Parse(ids["Chattings"].ToString());
-            int i = 0;
-            foreach (var id in chats)
-            {
-                try
-                {
-                    chattings.Add(i, id.Value[0]);
-                    Users.Items.Add(id.Key);
-                }
-                catch
-                {
-                    chattings[i] = id.Value[0];
-                }
-                i++;
-            }
             try
             {
-                string name = Users.SelectedItem.ToString();
-                Chats.Text = chattings[Users.SelectedIndex].ToString();
+                client.Encoding = Encoding.UTF8;
+                string download = client.DownloadString(url);
+                ids = JObject.Parse(download);
+                chats = JArray.Parse(ids["Users"][id]["chatting"].ToString());
+                int i = 0;
+                foreach (var id in chats)
+                {
+                    try
+                    {
+                        chattings.Add(i, id);
+                        Users.Items.Add(id);
+                    }
+                    catch
+                    {
+                        chattings[i] = id;
+                    }
+                    i++;
+                }
+                try
+                {
+                    string name = Users.SelectedItem.ToString();
+                    Chats.Text = chattings[Users.SelectedIndex].ToString();
+                }
+                catch { }
             }
-            catch { }
+            catch
+            {
+                Users.Items.Clear();
+            }
         }
 
         private void Send_Click(object sender, EventArgs e)
@@ -121,7 +128,7 @@ namespace SWAG_s_chatting
                 ids["Chattings"] = chats;
                 client.Encoding = Encoding.UTF8;
                 client.Headers.Add("Content-Type", "application/json");
-                client.UploadString(url[0], "PUT", ids.ToString());
+                client.UploadString(url, "PUT", ids.ToString());
                 InsertChat.Text = "";
             }
             catch

@@ -50,7 +50,8 @@ namespace SWAG_s_chatting
                 }
                 else
                 {
-                    Mainform.id = InsertID.Text;
+                    Mainform.id = ID;
+                    Makeform.id = ID;
                     Hide();
                     Mainform mainform = new Mainform();
                     mainform.Show();
