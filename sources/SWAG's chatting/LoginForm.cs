@@ -101,11 +101,12 @@ namespace SWAG_s_chatting
                     string password = gotohash(InsertPW.Text);
                     JArray jArray = new JArray();
                     jArray.Add(password);
-                    jArray.Add(false);
                     JObject newid = new JObject();
                     newid.Add("chatting", "");
                     newid.Add("Login", jArray);
-                    ids.Add(InsertID.Text, newid);
+                    JObject Users = JObject.Parse(ids["Users"].ToString());
+                    Users.Add(InsertID.Text, newid);
+                    ids["Users"] =  Users;
                     string upload = ids.ToString();
                     client.Headers.Add("Content-Type", "application/json");
                     client.UploadString(url,"Put",upload);
