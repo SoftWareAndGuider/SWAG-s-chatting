@@ -63,7 +63,6 @@ namespace SWAG_s_chatting
         private void Refresh_Click(object sender, EventArgs e)
         {
             Browser.Load(InsertURL.Text);
-            Browser.Back();
         }
 
         private void MetroButton1_Click(object sender, EventArgs e)
@@ -77,8 +76,12 @@ namespace SWAG_s_chatting
 
         private void Users_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string name = Users.SelectedItem.ToString();
-            Chats.Text = chattings[Users.SelectedItem.ToString()].ToString();
+            try
+            {
+                string name = Users.SelectedItem.ToString();
+                Chats.Text = chattings[Users.SelectedItem.ToString()].ToString();
+            }
+            catch { }
         }
 
         private void Browser_ChangeURL(object sender, AddressChangedEventArgs e)
