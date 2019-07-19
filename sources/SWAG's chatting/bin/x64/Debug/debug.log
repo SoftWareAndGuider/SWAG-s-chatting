@@ -396,3 +396,15 @@ a=ssrc:869778651 mslabel:-
 a=ssrc:869778651 label:
 
 [0719/142729.660:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.
+[0720/072111.659:WARNING:backend_impl.cc(1853)] Destroying invalid entry.
+[0720/072138.601:INFO:CONSOLE(0)] "HTML Imports is deprecated and will be removed in M73, around March 2019. Please use ES modules instead. See https://www.chromestatus.com/features/5144752345317376 for more details.", source:  (0)
+[0720/072139.493:INFO:CONSOLE(0)] "Refused to display 'https://accounts.google.com/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Ffeature%3Dpassive%26app%3Ddesktop%26next%3D%252Fsignin_passive%26hl%3Den%26action_handle_signin%3Dtrue&hl=en&uilel=3&service=youtube' in a frame because it set 'X-Frame-Options' to 'deny'.", source: https://www.youtube.com/?gl=KR&hl=ko (0)
+[0720/072142.191:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0720/072144.501:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0720/072149.862:INFO:CONSOLE(15)] "chrome.loadTimes() is deprecated, instead use standardized API: nextHopProtocol in Navigation Timing 2. https://www.chromestatus.com/features/5637885046816768.", source: https://www.youtube.com/yts/jsbin/network-vfl3EpVxj/network.js (15)
+[0720/072150.956:INFO:CONSOLE(0)] "The resource https://i.ytimg.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
+[0720/072210.366:WARNING:angle_platform_impl.cc(52)] compileToBinary(233): 
+C:\fakepath(77,10-42): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(99,10-42): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[0720/072214.556:INFO:CONSOLE(0)] "The resource https://pagead2.googlesyndication.com/pagead/js/r20190715/r20190131/show_ads_impl.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)

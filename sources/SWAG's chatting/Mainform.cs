@@ -32,6 +32,7 @@ namespace SWAG_s_chatting
             this.panel1.Controls.Add(Browser);
             Browser.Dock = DockStyle.Fill;
             Browser.AddressChanged += Browser_ChangeURL;
+            Browser.LoadError += Searching;
         }
 
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
@@ -40,6 +41,11 @@ namespace SWAG_s_chatting
         }
 
         private void Go_Click(object sender, EventArgs e)
+        {
+            Browser.Load(InsertURL.Text);
+        }
+
+        private void Searching(object sender, LoadErrorEventArgs e)
         {
             Browser.Load($"www.google.com/search?q={InsertURL.Text}");
         }
