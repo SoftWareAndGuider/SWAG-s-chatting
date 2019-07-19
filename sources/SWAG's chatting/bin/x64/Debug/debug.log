@@ -429,3 +429,10 @@ C:\fakepath(99,10-42): warning X3571: pow(f, e) will not work for negative f, us
 [0720/081132.366:INFO:CONSOLE(1)] "Uncaught TagError: adsbygoogle.push() error: No slot size for availableWidth=0", source: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js (1)
 [0720/081139.278:INFO:CONSOLE(0)] "The resource https://pagead2.googlesyndication.com/pagead/js/r20190715/r20190131/show_ads_impl.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
 [0720/081245.270:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.google.com/search?q=Cefsharp%20File%20Download
+[0720/082903.861:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.hipdf.com/kr/png-to-ico
+[0720/082911.808:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.hipdf.com/kr/png-to-ico
+[0720/082911.941:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.hipdf.com/kr/png-to-ico
+[0720/082912.074:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.hipdf.com/kr/png-to-ico
+[0720/082912.433:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.hipdf.com/kr/png-to-ico
+[0720/083121.030:INFO:CONSOLE(0)] "The resource https://pagead2.googlesyndication.com/pagead/js/r20190715/r20190131/show_ads_impl.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
+[0720/083140.494:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://convertio.co/kr/png-ico/

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.Chatting = new System.Windows.Forms.TabPage();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
@@ -317,6 +318,7 @@
             this.ClientSize = new System.Drawing.Size(1198, 669);
             this.Controls.Add(this.metroTabControl1);
             this.Font = new System.Drawing.Font("굴림", 9F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.Name = "Mainform";
             this.Padding = new System.Windows.Forms.Padding(21, 60, 21, 18);

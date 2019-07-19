@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.Login = new MetroFramework.Controls.MetroButton();
             this.InsertID = new MetroFramework.Controls.MetroTextBox();
             this.InsertPW = new MetroFramework.Controls.MetroTextBox();
@@ -139,6 +140,8 @@
             this.Controls.Add(this.InsertPW);
             this.Controls.Add(this.InsertID);
             this.Controls.Add(this.Login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);

@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using CefSharp;
 using CefSharp.WinForms;
+using CefSharp.Example.Handlers;
 
 namespace SWAG_s_chatting
 {
@@ -33,6 +34,7 @@ namespace SWAG_s_chatting
             Browser.Dock = DockStyle.Fill;
             Browser.AddressChanged += Browser_ChangeURL;
             Browser.LoadError += Searching;
+            Browser.DownloadHandler = new DownloadHandler();
         }
 
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
