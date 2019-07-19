@@ -360,3 +360,39 @@ a=ssrc:1075218477 mslabel:-
 a=ssrc:1075218477 label:
 
 [0719/113039.001:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.
+[0719/142729.572:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 104 to 127
+[0719/142729.572:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 106 to 125
+[0719/142729.572:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 110 to 124
+[0719/142729.572:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 103 to 123
+[0719/142729.572:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 105 to 122
+[0719/142729.572:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 109 to 121
+[0719/142729.658:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0719/142729.659:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0719/142729.659:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0719/142729.659:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0719/142729.660:ERROR:rtc_peer_connection_handler.cc(2225)] Failed to create native session description. Type: offer SDP: v=0
+o=- 997637365338234422 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0
+a=msid-semantic: WMS
+m=application 9 UDP/TLS/RTP/SAVPF 121
+c=IN IP4 0.0.0.0
+b=AS:30
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:9rku
+a=ice-pwd:cxgsn6d39xytFl75e7N19bVb
+a=ice-options:trickle
+a=fingerprint:sha-256 1C:C8:B2:C6:C5:37:A0:03:9B:C1:06:26:59:A9:06:BF:0E:F3:0D:34:47:09:8D:2B:32:0E:C6:8A:21:89:BE:6D
+a=setup:actpass
+a=mid:0
+a=sendrecv
+a=msid: 
+a=rtcp-mux
+a=rtpmap:121 google-data/90000
+a=ssrc:869778651 cname:7lVlU2e/Y/4GA1FS
+a=ssrc:869778651 msid:- 
+a=ssrc:869778651 mslabel:-
+a=ssrc:869778651 label:
+
+[0719/142729.660:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.

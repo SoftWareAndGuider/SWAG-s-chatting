@@ -15,7 +15,7 @@ namespace SWAG_s_chatting
         private string url = System.IO.File.ReadAllText("URL.txt");
         private static WebClient client = new WebClient();
         private static JObject ids = new JObject();
-        private static JArray chats = new JArray();
+        private static JObject chats = new JObject();
         private static Hashtable chattings = new Hashtable();
         LoginForm Login = new LoginForm();
         Makeform Make = new Makeform();
@@ -72,7 +72,7 @@ namespace SWAG_s_chatting
         private void Users_SelectedIndexChanged(object sender, EventArgs e)
         {
             string name = Users.SelectedItem.ToString();
-            Chats.Text = chattings[Users.SelectedIndex].ToString();
+            Chats.Text = chattings[Users.SelectedItem.ToString()].ToString();
         }
 
         private void Browser_ChangeURL(object sender, AddressChangedEventArgs e)
@@ -87,25 +87,29 @@ namespace SWAG_s_chatting
                 client.Encoding = Encoding.UTF8;
                 string download = client.DownloadString(url);
                 ids = JObject.Parse(download);
-                chats = JArray.Parse(ids["Users"][id]["chatting"].ToString());
-                int i = 0;
-                foreach (var id in chats)
+                chats = JObject.Parse(ids["Chattings"].ToString());
+                foreach (var id in ids["Users"][id]["chatting"])
+                {
+                    if (!Users.Items.Contains(id))
+                    {
+                        Users.Items.Add(id);
+                    }
+                }
+                foreach (var item in Users.Items)
                 {
                     try
                     {
-                        chattings.Add(i, id);
-                        Users.Items.Add(id);
+                        chattings.Add(item.ToString(), chats[item.ToString()][0].ToString());
                     }
                     catch
                     {
-                        chattings[i] = id;
+                        chattings[item.ToString()] = chats[item.ToString()][0].ToString();
                     }
-                    i++;
                 }
                 try
                 {
                     string name = Users.SelectedItem.ToString();
-                    Chats.Text = chattings[Users.SelectedIndex].ToString();
+                    Chats.Text = chattings[Users.SelectedItem.ToString()].ToString();
                 }
                 catch { }
             }
@@ -121,10 +125,10 @@ namespace SWAG_s_chatting
         }
         private void SendMessage()
         {
-            string send = $"{Chats.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{InsertChat.Text}\r\n\r\n";
             try
             {
-                chats[Users.SelectedItem] = send;
+                string send = $"{Chats.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{InsertChat.Text}\r\n\r\n";
+                chats[Users.SelectedItem.ToString()][0] = send;
                 ids["Chattings"] = chats;
                 client.Encoding = Encoding.UTF8;
                 client.Headers.Add("Content-Type", "application/json");
