@@ -408,3 +408,9 @@ C:\fakepath(77,10-42): warning X3571: pow(f, e) will not work for negative f, us
 C:\fakepath(99,10-42): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
 
 [0720/072214.556:INFO:CONSOLE(0)] "The resource https://pagead2.googlesyndication.com/pagead/js/r20190715/r20190131/show_ads_impl.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
+[0720/074339.797:INFO:CONSOLE(0)] "HTML Imports is deprecated and will be removed in M73, around March 2019. Please use ES modules instead. See https://www.chromestatus.com/features/5144752345317376 for more details.", source:  (0)
+[0720/074340.691:INFO:CONSOLE(0)] "Refused to display 'https://accounts.google.com/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26feature%3Dpassive%26hl%3Den%26next%3D%252Fsignin_passive&uilel=3&service=youtube&hl=en' in a frame because it set 'X-Frame-Options' to 'deny'.", source: https://www.youtube.com/ (0)
+[0720/074340.699:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.youtube.com/
+[0720/074341.080:INFO:CONSOLE(23)] "document.registerElement is deprecated and will be removed in M73, around March 2019. Please use window.customElements.define instead. See https://www.chromestatus.com/features/4642138092470272 for more details.", source: https://www.youtube.com/yts/jsbin/desktop_polymer-vfl5BkwEG/desktop_polymer.js (23)
+[0720/074341.962:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0720/074343.062:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/

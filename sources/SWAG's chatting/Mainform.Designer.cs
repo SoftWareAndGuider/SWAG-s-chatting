@@ -92,6 +92,7 @@
             // 
             // Send
             // 
+            this.Send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Send.AutoSize = true;
             this.Send.Location = new System.Drawing.Point(1000, 500);
             this.Send.Name = "Send";
@@ -103,6 +104,8 @@
             // 
             // InsertChat
             // 
+            this.InsertChat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -130,9 +133,13 @@
             this.InsertChat.UseSelectable = true;
             this.InsertChat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InsertChat.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.InsertChat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InsertChat_KeyDown);
             // 
             // Chats
             // 
+            this.Chats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             // 
             // 
             // 
@@ -165,6 +172,8 @@
             // 
             // Users
             // 
+            this.Users.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.Users.FormattingEnabled = true;
             this.Users.ItemHeight = 12;
             this.Users.Location = new System.Drawing.Point(47, 13);
@@ -255,8 +264,7 @@
             this.InsertURL.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.InsertURL.CustomButton.UseSelectable = true;
             this.InsertURL.CustomButton.Visible = false;
-            this.InsertURL.Lines = new string[] {
-        "google.com"};
+            this.InsertURL.Lines = new string[0];
             this.InsertURL.Location = new System.Drawing.Point(224, 20);
             this.InsertURL.MaxLength = 32767;
             this.InsertURL.Name = "InsertURL";
@@ -268,10 +276,10 @@
             this.InsertURL.ShortcutsEnabled = true;
             this.InsertURL.Size = new System.Drawing.Size(802, 27);
             this.InsertURL.TabIndex = 7;
-            this.InsertURL.Text = "google.com";
             this.InsertURL.UseSelectable = true;
             this.InsertURL.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InsertURL.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.InsertURL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InsertURL_KeyDown);
             // 
             // Setting
             // 
@@ -284,6 +292,8 @@
             // 
             // 회원탈퇴
             // 
+            this.회원탈퇴.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.회원탈퇴.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.회원탈퇴.Location = new System.Drawing.Point(3, 395);
             this.회원탈퇴.Name = "회원탈퇴";

@@ -152,5 +152,21 @@ namespace SWAG_s_chatting
             Makeform makeform = new Makeform();
             makeform.Show();
         }
+
+        private void InsertChat_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendMessage();
+            }
+        }
+
+        private void InsertURL_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Browser.Load(InsertURL.Text);
+            }
+        }
     }
 }
