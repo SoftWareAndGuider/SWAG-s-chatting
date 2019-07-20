@@ -62,7 +62,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(21, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(1156, 591);
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
@@ -173,7 +173,7 @@
             this.Internet.Controls.Add(this.InsertURL);
             this.Internet.Location = new System.Drawing.Point(4, 41);
             this.Internet.Name = "Internet";
-            this.Internet.Size = new System.Drawing.Size(1190, 578);
+            this.Internet.Size = new System.Drawing.Size(1148, 546);
             this.Internet.TabIndex = 1;
             this.Internet.Text = "인터넷 브라우저";
             // 
@@ -185,7 +185,7 @@
             this.panel1.AutoSize = true;
             this.panel1.Location = new System.Drawing.Point(17, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1116, 490);
+            this.panel1.Size = new System.Drawing.Size(1074, 458);
             this.panel1.TabIndex = 12;
             // 
             // Reload
@@ -267,7 +267,7 @@
             this.Setting.Controls.Add(this.회원탈퇴);
             this.Setting.Location = new System.Drawing.Point(4, 41);
             this.Setting.Name = "Setting";
-            this.Setting.Size = new System.Drawing.Size(1190, 578);
+            this.Setting.Size = new System.Drawing.Size(1148, 546);
             this.Setting.TabIndex = 2;
             this.Setting.Text = "설정";
             // 
@@ -276,9 +276,9 @@
             this.회원탈퇴.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.회원탈퇴.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.회원탈퇴.Location = new System.Drawing.Point(3, 395);
+            this.회원탈퇴.Location = new System.Drawing.Point(3, 363);
             this.회원탈퇴.Name = "회원탈퇴";
-            this.회원탈퇴.Size = new System.Drawing.Size(1130, 151);
+            this.회원탈퇴.Size = new System.Drawing.Size(1088, 151);
             this.회원탈퇴.TabIndex = 0;
             this.회원탈퇴.Text = "회원탈퇴";
             this.회원탈퇴.UseSelectable = true;

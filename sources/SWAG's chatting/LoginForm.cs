@@ -93,7 +93,7 @@ namespace SWAG_s_chatting
                 JObject ids = JObject.Parse(download);
                 try
                 {
-                    string test = ids["Users"][InsertID.Text][0].ToString();
+                    string test = ids["Users"][InsertID.Text].ToString();
                     MessageBox.Show("이 ID는 중복됩니다","중복");
                 }
                 catch
