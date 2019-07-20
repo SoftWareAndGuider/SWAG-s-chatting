@@ -69,7 +69,9 @@ namespace SWAG_s_chatting
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            ids.Remove(id);
+            JObject Users = JObject.Parse(ids["Users"].ToString());
+            Users.Remove(id);
+            ids["Users"] = Users;
             client.Headers.Add("Content-Type", "Application/json");
             client.UploadString(url, "PUT", ids.ToString());
             MessageBox.Show("당신의 ID가 삭제되었습니다","완료");
@@ -178,6 +180,11 @@ namespace SWAG_s_chatting
         {
             ChattingBox.SelectionStart = ChattingBox.TextLength;
             ChattingBox.ScrollToCaret();
+        }
+
+        private void Mainform_Load(object sender, EventArgs e)
+        {
+            Text = id;
         }
     }
 }
