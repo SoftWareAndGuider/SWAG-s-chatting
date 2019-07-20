@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Makeform));
             this.Insert = new MetroFramework.Controls.MetroRadioButton();
             this.Make = new MetroFramework.Controls.MetroRadioButton();
             this.InsertChattingRooms = new System.Windows.Forms.ListBox();
             this.InsertPanel = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.InsertShowPassword = new MetroFramework.Controls.MetroCheckBox();
@@ -48,7 +50,7 @@
             this.MakePassword = new MetroFramework.Controls.MetroTextBox();
             this.MakeName = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroCheckBox1 = new MetroFramework.Controls.MetroCheckBox();
             this.InsertPanel.SuspendLayout();
             this.MakePanel.SuspendLayout();
             this.SuspendLayout();
@@ -110,6 +112,15 @@
             this.InsertPanel.VerticalScrollbarHighlightOnWheel = false;
             this.InsertPanel.VerticalScrollbarSize = 10;
             // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(4, 26);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel6.TabIndex = 8;
+            this.metroLabel6.Text = "검색";
+            // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
@@ -155,7 +166,7 @@
             // 
             // 
             this.InsertSearchword.CustomButton.Image = null;
-            this.InsertSearchword.CustomButton.Location = new System.Drawing.Point(100, 1);
+            this.InsertSearchword.CustomButton.Location = new System.Drawing.Point(170, 1);
             this.InsertSearchword.CustomButton.Name = "";
             this.InsertSearchword.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.InsertSearchword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -223,6 +234,7 @@
             // MakePanel
             // 
             this.MakePanel.AutoSize = true;
+            this.MakePanel.Controls.Add(this.metroCheckBox1);
             this.MakePanel.Controls.Add(this.metroLabel3);
             this.MakePanel.Controls.Add(this.metroLabel2);
             this.MakePanel.Controls.Add(this.metroLabel1);
@@ -236,7 +248,7 @@
             this.MakePanel.HorizontalScrollbarSize = 10;
             this.MakePanel.Location = new System.Drawing.Point(144, 241);
             this.MakePanel.Name = "MakePanel";
-            this.MakePanel.Size = new System.Drawing.Size(477, 181);
+            this.MakePanel.Size = new System.Drawing.Size(540, 181);
             this.MakePanel.TabIndex = 6;
             this.MakePanel.VerticalScrollbarBarColor = true;
             this.MakePanel.VerticalScrollbarHighlightOnWheel = false;
@@ -357,14 +369,15 @@
             this.metroButton1.Text = "만들기";
             this.metroButton1.UseSelectable = true;
             // 
-            // metroLabel6
+            // metroCheckBox1
             // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(4, 26);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(37, 19);
-            this.metroLabel6.TabIndex = 8;
-            this.metroLabel6.Text = "검색";
+            this.metroCheckBox1.AutoSize = true;
+            this.metroCheckBox1.Location = new System.Drawing.Point(302, 32);
+            this.metroCheckBox1.Name = "metroCheckBox1";
+            this.metroCheckBox1.Size = new System.Drawing.Size(235, 15);
+            this.metroCheckBox1.TabIndex = 10;
+            this.metroCheckBox1.Text = "채팅방 숨기기 (정확히 검색시에만 보임)";
+            this.metroCheckBox1.UseSelectable = true;
             // 
             // Makeform
             // 
@@ -375,6 +388,7 @@
             this.Controls.Add(this.InsertPanel);
             this.Controls.Add(this.Make);
             this.Controls.Add(this.Insert);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Makeform";
             this.Resizable = false;
@@ -412,5 +426,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroCheckBox metroCheckBox1;
     }
 }

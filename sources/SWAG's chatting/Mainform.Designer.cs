@@ -35,7 +35,6 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.Send = new MetroFramework.Controls.MetroButton();
             this.InsertChat = new MetroFramework.Controls.MetroTextBox();
-            this.Chats = new MetroFramework.Controls.MetroTextBox();
             this.Users = new System.Windows.Forms.ListBox();
             this.Internet = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -47,6 +46,7 @@
             this.Setting = new System.Windows.Forms.TabPage();
             this.회원탈퇴 = new MetroFramework.Controls.MetroButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.ChattingBox = new System.Windows.Forms.TextBox();
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -72,7 +72,6 @@
             this.Chatting.Controls.Add(this.metroButton1);
             this.Chatting.Controls.Add(this.Send);
             this.Chatting.Controls.Add(this.InsertChat);
-            this.Chatting.Controls.Add(this.Chats);
             this.Chatting.Controls.Add(this.Users);
             this.Chatting.Location = new System.Drawing.Point(4, 41);
             this.Chatting.Name = "Chatting";
@@ -95,7 +94,7 @@
             // 
             this.Send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Send.AutoSize = true;
-            this.Send.Location = new System.Drawing.Point(1000, 500);
+            this.Send.Location = new System.Drawing.Point(1000, 506);
             this.Send.Name = "Send";
             this.Send.Size = new System.Drawing.Size(110, 23);
             this.Send.TabIndex = 12;
@@ -120,7 +119,7 @@
             this.InsertChat.CustomButton.UseSelectable = true;
             this.InsertChat.CustomButton.Visible = false;
             this.InsertChat.Lines = new string[0];
-            this.InsertChat.Location = new System.Drawing.Point(208, 500);
+            this.InsertChat.Location = new System.Drawing.Point(208, 506);
             this.InsertChat.MaxLength = 32767;
             this.InsertChat.Name = "InsertChat";
             this.InsertChat.PasswordChar = '\0';
@@ -135,41 +134,6 @@
             this.InsertChat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.InsertChat.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.InsertChat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InsertChat_KeyDown);
-            // 
-            // Chats
-            // 
-            this.Chats.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.Chats.CustomButton.Image = null;
-            this.Chats.CustomButton.Location = new System.Drawing.Point(439, 2);
-            this.Chats.CustomButton.Name = "";
-            this.Chats.CustomButton.Size = new System.Drawing.Size(467, 467);
-            this.Chats.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.Chats.CustomButton.TabIndex = 1;
-            this.Chats.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.Chats.CustomButton.UseSelectable = true;
-            this.Chats.CustomButton.Visible = false;
-            this.Chats.Lines = new string[0];
-            this.Chats.Location = new System.Drawing.Point(208, 13);
-            this.Chats.MaxLength = 32767;
-            this.Chats.Multiline = true;
-            this.Chats.Name = "Chats";
-            this.Chats.PasswordChar = '\0';
-            this.Chats.ReadOnly = true;
-            this.Chats.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Chats.SelectedText = "";
-            this.Chats.SelectionLength = 0;
-            this.Chats.SelectionStart = 0;
-            this.Chats.ShortcutsEnabled = true;
-            this.Chats.Size = new System.Drawing.Size(909, 472);
-            this.Chats.TabIndex = 10;
-            this.Chats.UseSelectable = true;
-            this.Chats.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.Chats.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // Users
             // 
@@ -310,12 +274,28 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // ChattingBox
+            // 
+            this.ChattingBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ChattingBox.BackColor = System.Drawing.Color.White;
+            this.ChattingBox.Location = new System.Drawing.Point(233, 114);
+            this.ChattingBox.Multiline = true;
+            this.ChattingBox.Name = "ChattingBox";
+            this.ChattingBox.ReadOnly = true;
+            this.ChattingBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ChattingBox.Size = new System.Drawing.Size(902, 487);
+            this.ChattingBox.TabIndex = 10;
+            this.ChattingBox.TextChanged += new System.EventHandler(this.ChattingBox_TextChanged);
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1198, 669);
+            this.Controls.Add(this.ChattingBox);
             this.Controls.Add(this.metroTabControl1);
             this.Font = new System.Drawing.Font("굴림", 9F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -331,6 +311,7 @@
             this.Internet.PerformLayout();
             this.Setting.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -341,7 +322,6 @@
         private System.Windows.Forms.TabPage Setting;
         private MetroFramework.Controls.MetroButton Send;
         private MetroFramework.Controls.MetroTextBox InsertChat;
-        private MetroFramework.Controls.MetroTextBox Chats;
         private System.Windows.Forms.ListBox Users;
         private MetroFramework.Controls.MetroButton Go;
         private MetroFramework.Controls.MetroButton Next;
@@ -353,5 +333,6 @@
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroButton metroButton1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox ChattingBox;
     }
 }

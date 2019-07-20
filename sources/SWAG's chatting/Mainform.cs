@@ -81,7 +81,7 @@ namespace SWAG_s_chatting
             try
             {
                 string name = Users.SelectedItem.ToString();
-                Chats.Text = chattings[Users.SelectedItem.ToString()].ToString();
+                ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
             }
             catch { }
         }
@@ -120,7 +120,7 @@ namespace SWAG_s_chatting
                 try
                 {
                     string name = Users.SelectedItem.ToString();
-                    Chats.Text = chattings[Users.SelectedItem.ToString()].ToString();
+                    ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
                 }
                 catch { }
             }
@@ -138,7 +138,7 @@ namespace SWAG_s_chatting
         {
             try
             {
-                string send = $"{Chats.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{InsertChat.Text}\r\n\r\n";
+                string send = $"{ChattingBox.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{InsertChat.Text}\r\n\r\n";
                 chats[Users.SelectedItem.ToString()][0] = send;
                 ids["Chattings"] = chats;
                 client.Encoding = Encoding.UTF8;
@@ -172,6 +172,12 @@ namespace SWAG_s_chatting
             {
                 Browser.Load(InsertURL.Text);
             }
+        }
+
+        private void ChattingBox_TextChanged(object sender, EventArgs e)
+        {
+            ChattingBox.SelectionStart = ChattingBox.TextLength;
+            ChattingBox.ScrollToCaret();
         }
     }
 }
