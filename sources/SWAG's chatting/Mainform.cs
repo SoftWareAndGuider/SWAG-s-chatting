@@ -7,6 +7,7 @@ using Newtonsoft.Json.Linq;
 using CefSharp;
 using CefSharp.WinForms;
 using CefSharp.Example.Handlers;
+using System.IO;
 
 namespace SWAG_s_chatting
 {
@@ -95,6 +96,7 @@ namespace SWAG_s_chatting
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
+            Hashtable hashtable = chattings;
             try
             {
                 client.Encoding = Encoding.UTF8;
@@ -129,6 +131,10 @@ namespace SWAG_s_chatting
             catch
             {
                 Users.Items.Clear();
+            }
+            if (chattings != hashtable)
+            {
+                notifyIcon1.ShowBalloonTip(500);
             }
         }
 
@@ -185,6 +191,11 @@ namespace SWAG_s_chatting
         private void Mainform_Load(object sender, EventArgs e)
         {
             Text = id;
+        }
+
+        private void NotifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

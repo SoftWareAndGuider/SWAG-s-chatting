@@ -214,5 +214,18 @@ namespace SWAG_s_chatting
                 }
             }
         }
+
+        private void MetroTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            var items = MakeInvite.Items;
+            MakeInvite.Items.Clear();
+            foreach(var item in items)
+            {
+                if (item.ToString().Contains(MakeSearchword.Text))
+                {
+                    MakeInvite.Items.Add(item);
+                }
+            }
+        }
     }
 }

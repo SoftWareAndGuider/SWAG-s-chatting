@@ -42,6 +42,9 @@
             this.InsertInsert = new MetroFramework.Controls.MetroButton();
             this.InsertPassword = new MetroFramework.Controls.MetroTextBox();
             this.MakePanel = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.MakeSearchword = new MetroFramework.Controls.MetroTextBox();
+            this.MakeHide = new MetroFramework.Controls.MetroCheckBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -50,9 +53,6 @@
             this.MakePassword = new MetroFramework.Controls.MetroTextBox();
             this.MakeName = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.MakeHide = new MetroFramework.Controls.MetroCheckBox();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.InsertPanel.SuspendLayout();
             this.MakePanel.SuspendLayout();
             this.SuspendLayout();
@@ -237,7 +237,7 @@
             // 
             this.MakePanel.AutoSize = true;
             this.MakePanel.Controls.Add(this.metroLabel7);
-            this.MakePanel.Controls.Add(this.metroTextBox1);
+            this.MakePanel.Controls.Add(this.MakeSearchword);
             this.MakePanel.Controls.Add(this.MakeHide);
             this.MakePanel.Controls.Add(this.metroLabel3);
             this.MakePanel.Controls.Add(this.metroLabel2);
@@ -258,6 +258,56 @@
             this.MakePanel.VerticalScrollbarHighlightOnWheel = false;
             this.MakePanel.VerticalScrollbarSize = 10;
             this.MakePanel.Visible = false;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(4, 33);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(37, 19);
+            this.metroLabel7.TabIndex = 12;
+            this.metroLabel7.Text = "검색";
+            // 
+            // MakeSearchword
+            // 
+            // 
+            // 
+            // 
+            this.MakeSearchword.CustomButton.Image = null;
+            this.MakeSearchword.CustomButton.Location = new System.Drawing.Point(138, 1);
+            this.MakeSearchword.CustomButton.Name = "";
+            this.MakeSearchword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.MakeSearchword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.MakeSearchword.CustomButton.TabIndex = 1;
+            this.MakeSearchword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.MakeSearchword.CustomButton.UseSelectable = true;
+            this.MakeSearchword.CustomButton.Visible = false;
+            this.MakeSearchword.Lines = new string[0];
+            this.MakeSearchword.Location = new System.Drawing.Point(47, 33);
+            this.MakeSearchword.MaxLength = 32767;
+            this.MakeSearchword.Name = "MakeSearchword";
+            this.MakeSearchword.PasswordChar = '\0';
+            this.MakeSearchword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.MakeSearchword.SelectedText = "";
+            this.MakeSearchword.SelectionLength = 0;
+            this.MakeSearchword.SelectionStart = 0;
+            this.MakeSearchword.ShortcutsEnabled = true;
+            this.MakeSearchword.Size = new System.Drawing.Size(160, 23);
+            this.MakeSearchword.TabIndex = 11;
+            this.MakeSearchword.UseSelectable = true;
+            this.MakeSearchword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.MakeSearchword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.MakeSearchword.TextChanged += new System.EventHandler(this.MetroTextBox1_TextChanged);
+            // 
+            // MakeHide
+            // 
+            this.MakeHide.AutoSize = true;
+            this.MakeHide.Location = new System.Drawing.Point(263, 30);
+            this.MakeHide.Name = "MakeHide";
+            this.MakeHide.Size = new System.Drawing.Size(235, 15);
+            this.MakeHide.TabIndex = 10;
+            this.MakeHide.Text = "채팅방 숨기기 (정확히 검색시에만 보임)";
+            this.MakeHide.UseSelectable = true;
             // 
             // metroLabel3
             // 
@@ -376,55 +426,6 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
-            // MakeHide
-            // 
-            this.MakeHide.AutoSize = true;
-            this.MakeHide.Location = new System.Drawing.Point(263, 30);
-            this.MakeHide.Name = "MakeHide";
-            this.MakeHide.Size = new System.Drawing.Size(235, 15);
-            this.MakeHide.TabIndex = 10;
-            this.MakeHide.Text = "채팅방 숨기기 (정확히 검색시에만 보임)";
-            this.MakeHide.UseSelectable = true;
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(4, 33);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(37, 19);
-            this.metroLabel7.TabIndex = 12;
-            this.metroLabel7.Text = "검색";
-            // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(138, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(47, 33);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(160, 23);
-            this.metroTextBox1.TabIndex = 11;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // Makeform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -474,6 +475,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroCheckBox MakeHide;
         private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox MakeSearchword;
     }
 }

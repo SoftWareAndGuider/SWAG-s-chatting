@@ -436,3 +436,43 @@ C:\fakepath(99,10-42): warning X3571: pow(f, e) will not work for negative f, us
 [0720/082912.433:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.hipdf.com/kr/png-to-ico
 [0720/083121.030:INFO:CONSOLE(0)] "The resource https://pagead2.googlesyndication.com/pagead/js/r20190715/r20190131/show_ads_impl.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
 [0720/083140.494:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://convertio.co/kr/png-ico/
+[0720/142028.102:WARNING:backend_impl.cc(1853)] Destroying invalid entry.
+[0720/142313.933:WARNING:angle_platform_impl.cc(52)] compileToBinary(233): 
+C:\fakepath(77,10-42): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(99,10-42): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[0720/142317.959:INFO:CONSOLE(0)] "The resource https://pagead2.googlesyndication.com/pagead/js/r20190715/r20190131/show_ads_impl.js was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
+[0720/145731.409:INFO:CONSOLE(0)] "HTML Imports is deprecated and will be removed in M73, around March 2019. Please use ES modules instead. See https://www.chromestatus.com/features/5144752345317376 for more details.", source:  (0)
+[0720/145732.188:INFO:CONSOLE(0)] "Refused to display 'https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&hl=en&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fapp%3Ddesktop%26action_handle_signin%3Dtrue%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&passive=true' in a frame because it set 'X-Frame-Options' to 'deny'.", source: https://www.youtube.com/ (0)
+[0720/145732.200:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.youtube.com/
+[0720/145732.807:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0720/145733.425:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0720/145733.793:INFO:CONSOLE(1581)] "<link rel=preload> must have a valid `as` value", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (1581)
+[0720/145733.998:INFO:CONSOLE(15)] "chrome.loadTimes() is deprecated, instead use standardized API: nextHopProtocol in Navigation Timing 2. https://www.chromestatus.com/features/5637885046816768.", source: https://www.youtube.com/yts/jsbin/network-vfl3EpVxj/network.js (15)
+[0720/145737.800:INFO:CONSOLE(0)] "The resource https://i.ytimg.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
+[0720/145750.139:INFO:CONSOLE(0)] "HTML Imports is deprecated and will be removed in M73, around March 2019. Please use ES modules instead. See https://www.chromestatus.com/features/5144752345317376 for more details.", source:  (0)
+[0720/145750.792:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0720/145750.948:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0720/145751.059:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145751.119:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145751.514:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145751.654:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145751.713:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145751.849:INFO:CONSOLE(1581)] "<link rel=preload> must have a valid `as` value", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (1581)
+[0720/145752.157:INFO:CONSOLE(15)] "chrome.loadTimes() is deprecated, instead use standardized API: nextHopProtocol in Navigation Timing 2. https://www.chromestatus.com/features/5637885046816768.", source: https://www.youtube.com/yts/jsbin/network-vfl3EpVxj/network.js (15)
+[0720/145755.199:INFO:CONSOLE(0)] "The resource https://i.ytimg.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
+[0720/145828.754:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145828.757:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145828.761:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145828.765:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145828.953:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145848.761:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145848.762:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145848.763:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145848.828:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145858.473:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145919.328:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 187
+[0720/145919.598:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145919.632:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/145919.931:INFO:CONSOLE(7242)] "method `updateReduxProperties` not defined", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vfl6ZLdP3/desktop_polymer_sel_auto_svg_home_v2.js (7242)
+[0720/151703.219:WARNING:spdy_session.cc(3180)] Received HEADERS for invalid stream 1
