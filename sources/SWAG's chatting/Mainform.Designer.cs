@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.Chatting = new System.Windows.Forms.TabPage();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.OpenRemoveForm = new MetroFramework.Controls.MetroButton();
             this.ChattingBox = new System.Windows.Forms.TextBox();
             this.InsertChat = new MetroFramework.Controls.MetroTextBox();
             this.OpenMakeForm = new MetroFramework.Controls.MetroButton();
@@ -49,7 +51,7 @@
             this.회원탈퇴 = new MetroFramework.Controls.MetroButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.OpenRemoveForm = new MetroFramework.Controls.MetroButton();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -72,6 +74,7 @@
             // 
             // Chatting
             // 
+            this.Chatting.Controls.Add(this.metroButton1);
             this.Chatting.Controls.Add(this.OpenRemoveForm);
             this.Chatting.Controls.Add(this.ChattingBox);
             this.Chatting.Controls.Add(this.InsertChat);
@@ -83,6 +86,27 @@
             this.Chatting.Size = new System.Drawing.Size(1148, 546);
             this.Chatting.TabIndex = 0;
             this.Chatting.Text = "채팅";
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.metroButton1.AutoSize = true;
+            this.metroButton1.Location = new System.Drawing.Point(1067, 498);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(44, 23);
+            this.metroButton1.TabIndex = 19;
+            this.metroButton1.Text = "삭제";
+            this.metroButton1.UseSelectable = true;
+            // 
+            // OpenRemoveForm
+            // 
+            this.OpenRemoveForm.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.OpenRemoveForm.Location = new System.Drawing.Point(3, 59);
+            this.OpenRemoveForm.Name = "OpenRemoveForm";
+            this.OpenRemoveForm.Size = new System.Drawing.Size(38, 40);
+            this.OpenRemoveForm.TabIndex = 18;
+            this.OpenRemoveForm.Text = "-";
+            this.OpenRemoveForm.UseSelectable = true;
             // 
             // ChattingBox
             // 
@@ -107,7 +131,7 @@
             // 
             // 
             this.InsertChat.CustomButton.Image = null;
-            this.InsertChat.CustomButton.Location = new System.Drawing.Point(764, 1);
+            this.InsertChat.CustomButton.Location = new System.Drawing.Point(758, 1);
             this.InsertChat.CustomButton.Name = "";
             this.InsertChat.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.InsertChat.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -125,7 +149,7 @@
             this.InsertChat.SelectionLength = 0;
             this.InsertChat.SelectionStart = 0;
             this.InsertChat.ShortcutsEnabled = true;
-            this.InsertChat.Size = new System.Drawing.Size(786, 23);
+            this.InsertChat.Size = new System.Drawing.Size(780, 23);
             this.InsertChat.TabIndex = 14;
             this.InsertChat.UseSelectable = true;
             this.InsertChat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -149,9 +173,9 @@
             this.Send.AutoSize = true;
             this.Send.Location = new System.Drawing.Point(1001, 498);
             this.Send.Name = "Send";
-            this.Send.Size = new System.Drawing.Size(110, 23);
+            this.Send.Size = new System.Drawing.Size(60, 23);
             this.Send.TabIndex = 12;
-            this.Send.Text = "Send";
+            this.Send.Text = "보내기";
             this.Send.UseSelectable = true;
             this.Send.Click += new System.EventHandler(this.Send_Click);
             // 
@@ -301,7 +325,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 2500;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // notifyIcon1
@@ -313,15 +337,11 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
             // 
-            // OpenRemoveForm
+            // timer2
             // 
-            this.OpenRemoveForm.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.OpenRemoveForm.Location = new System.Drawing.Point(3, 59);
-            this.OpenRemoveForm.Name = "OpenRemoveForm";
-            this.OpenRemoveForm.Size = new System.Drawing.Size(38, 40);
-            this.OpenRemoveForm.TabIndex = 18;
-            this.OpenRemoveForm.Text = "-";
-            this.OpenRemoveForm.UseSelectable = true;
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // Mainform
             // 
@@ -336,7 +356,6 @@
             this.Name = "Mainform";
             this.Padding = new System.Windows.Forms.Padding(21, 60, 21, 18);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
-            this.Load += new System.EventHandler(this.Mainform_Load);
             this.metroTabControl1.ResumeLayout(false);
             this.Chatting.ResumeLayout(false);
             this.Chatting.PerformLayout();
@@ -369,5 +388,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton OpenRemoveForm;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.Timer timer2;
     }
 }

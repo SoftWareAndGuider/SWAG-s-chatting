@@ -221,3 +221,4 @@ C:\Users\hj666\Desktop\프로그래밍\오픈소스\swag-s-chatting\sources\SWAG
 C:\Users\hj666\Desktop\프로그래밍\오픈소스\swag-s-chatting\sources\SWAG's chatting\obj\x64\Debug\SWAG's chatting.exe
 C:\Users\hj666\Desktop\프로그래밍\오픈소스\swag-s-chatting\sources\SWAG's chatting\obj\x64\Debug\SWAG's chatting.pdb
 C:\Users\hj666\Desktop\프로그래밍\오픈소스\swag-s-chatting\sources\SWAG's chatting\obj\x64\Debug\SWAG_s_chatting.Makeform.resources
+C:\Users\hj666\Desktop\프로그래밍\오픈소스\swag-s-chatting\sources\SWAG's chatting\obj\x64\Debug\SWAG_s_chatting.RemoveForm.resources

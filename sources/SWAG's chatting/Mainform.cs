@@ -14,18 +14,22 @@ namespace SWAG_s_chatting
     public partial class Mainform : MetroFramework.Forms.MetroForm
     {
         public static string id;
-        private string url = System.IO.File.ReadAllText("URL.txt");
+        private string url = File.ReadAllText("URL.txt");
         private static WebClient client = new WebClient();
         private static JObject ids = new JObject();
         private static JObject chats = new JObject();
+        private static string checkstring;
+        private static Hashtable checkchatting = new Hashtable();
         private static Hashtable chattings = new Hashtable();
         LoginForm Login = new LoginForm();
         Makeform Make = new Makeform();
+        private string download;
 
         public Mainform()
         {
             InitializeComponent();
             startchromium();
+            loading();
         }
         private void startchromium()
         {
@@ -96,45 +100,51 @@ namespace SWAG_s_chatting
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            Hashtable hashtable = chattings;
-            try
+            if (download != checkstring)
             {
-                client.Encoding = Encoding.UTF8;
-                string download = client.DownloadString(url);
-                ids = JObject.Parse(download);
-                chats = JObject.Parse(ids["Chattings"].ToString());
-                foreach (var id in ids["Users"][id]["chatting"])
-                {
-                    if (!Users.Items.Contains(id))
-                    {
-                        Users.Items.Add(id);
-                    }
-                }
-                foreach (var item in Users.Items)
-                {
-                    try
-                    {
-                        chattings.Add(item.ToString(), chats[item.ToString()][0].ToString());
-                    }
-                    catch
-                    {
-                        chattings[item.ToString()] = chats[item.ToString()][0].ToString();
-                    }
-                }
+                checkstring = download;
                 try
                 {
-                    string name = Users.SelectedItem.ToString();
-                    ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
+                    ids = JObject.Parse(download);
+                    chats = JObject.Parse(ids["Chattings"].ToString());
+                    MessageBox.Show(chattings[Users.SelectedItem.ToString()].ToString() + "\nVS\n" + checkchatting[Users.SelectedItem.ToString()].ToString());
+                    if (chattings != checkchatting)
+                    {
+                        notifyIcon1.ShowBalloonTip(500);
+                        try
+                        {
+                            string name = Users.SelectedItem.ToString();
+                            ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
+                            checkchatting = chattings;
+                        }
+                        catch { }
+                    }
+                    else
+                    {
+                        foreach (var id in ids["Users"][id]["chatting"])
+                        {
+                            if (!Users.Items.Contains(id))
+                            {
+                                Users.Items.Add(id);
+                            }
+                        }
+                        foreach (var item in Users.Items)
+                        {
+                            try
+                            {
+                                chattings.Add(item.ToString(), chats[item.ToString()][0].ToString());
+                            }
+                            catch
+                            {
+                                chattings[item.ToString()] = chats[item.ToString()][0].ToString();
+                            }
+                        }
+                    }
                 }
-                catch { }
-            }
-            catch
-            {
-                Users.Items.Clear();
-            }
-            if (chattings != hashtable)
-            {
-                notifyIcon1.ShowBalloonTip(500);
+                catch
+                {
+                    Users.Items.Clear();
+                }
             }
         }
 
@@ -146,13 +156,14 @@ namespace SWAG_s_chatting
         {
             try
             {
-                string send = $"{ChattingBox.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{InsertChat.Text}\r\n\r\n";
+                string text = InsertChat.Text;
+                InsertChat.Text = "";
+                string send = $"{ChattingBox.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{text}\r\n\r\n";
                 chats[Users.SelectedItem.ToString()][0] = send;
                 ids["Chattings"] = chats;
                 client.Encoding = Encoding.UTF8;
                 client.Headers.Add("Content-Type", "application/json");
                 client.UploadString(url, "PUT", ids.ToString());
-                InsertChat.Text = "";
             }
             catch
             {
@@ -188,14 +199,57 @@ namespace SWAG_s_chatting
             ChattingBox.ScrollToCaret();
         }
 
-        private void Mainform_Load(object sender, EventArgs e)
+        private void loading()
         {
+            client.Encoding = Encoding.UTF8;
             Text = id;
+            try
+            {
+                client.Encoding = Encoding.UTF8;
+                download = client.DownloadString(url);
+                ids = JObject.Parse(download);
+                chats = JObject.Parse(ids["Chattings"].ToString());
+                foreach (var id in ids["Users"][id]["chatting"])
+                {
+                    if (!Users.Items.Contains(id))
+                    {
+                        Users.Items.Add(id);
+                    }
+                }
+                foreach (var item in Users.Items)
+                {
+                    try
+                    {
+                        chattings.Add(item.ToString(), chats[item.ToString()][0].ToString());
+                    }
+                    catch
+                    {
+                        chattings[item.ToString()] = chats[item.ToString()][0].ToString();
+                    }
+                }
+                try
+                {
+                    string name = Users.SelectedItem.ToString();
+                    ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
+                }
+                catch { }
+            }
+            catch
+            {
+                Users.Items.Clear();
+            }
+            checkchatting = chattings;
         }
 
         private void NotifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void Timer2_Tick(object sender, EventArgs e)
+        {
+            client.Encoding = Encoding.UTF8;
+            download = client.DownloadString(url);
         }
     }
 }
