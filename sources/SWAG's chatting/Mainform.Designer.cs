@@ -51,7 +51,6 @@
             this.회원탈퇴 = new MetroFramework.Controls.MetroButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -325,7 +324,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 2500;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // notifyIcon1
@@ -333,15 +332,9 @@
             this.notifyIcon1.BalloonTipText = "채팅왔습니다.";
             this.notifyIcon1.BalloonTipTitle = "알림";
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "SWAG\'s Chatting";
+            this.notifyIcon1.Text = "채팅 왔습니다.";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
-            // 
-            // timer2
-            // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.Timer2_Tick);
             // 
             // Mainform
             // 
@@ -389,6 +382,5 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton OpenRemoveForm;
         private MetroFramework.Controls.MetroButton metroButton1;
-        private System.Windows.Forms.Timer timer2;
     }
 }
