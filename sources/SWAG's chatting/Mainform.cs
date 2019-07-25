@@ -82,15 +82,6 @@ namespace SWAG_s_chatting
             Application.Exit();
         }
 
-        private void Users_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
-            }
-            catch { }
-        }
-
         private void Browser_ChangeURL(object sender, AddressChangedEventArgs e)
         {
             InsertURL.Text = e.Address;
@@ -100,6 +91,7 @@ namespace SWAG_s_chatting
         {
             client.Encoding = Encoding.UTF8;
             download = client.DownloadString(url);
+            //이전 값과 현재 값이 다를 때만 실행
             if (download != checkstring)
             {
                 checkstring = download;
@@ -124,7 +116,10 @@ namespace SWAG_s_chatting
                     if (chattings != checkchatting)
                     {
                         notifyIcon1.BalloonTipTitle = id;
-                        notifyIcon1.ShowBalloonTip(500);
+                        if (!(NoInter.Checked || FormSelected.Checked))
+                        {
+                            notifyIcon1.ShowBalloonTip(500);
+                        }
                         try
                         { 
                             ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
@@ -157,23 +152,6 @@ namespace SWAG_s_chatting
                 client.Encoding = Encoding.UTF8;
                 client.Headers.Add("Content-Type", "application/json");
                 client.UploadString(url, "PUT", ids.ToString());
-
-
-                checkstring = ids.ToString();
-                foreach (var id in ids["Users"][id]["chatting"])
-                {
-                    try
-                    {
-                        chattings.Add(id.ToString(), ids["Chattings"][id.ToString()][0]);
-                        checkchatting.Add(id.ToString(), ids["Chattings"][id.ToString()][0]);
-                    }
-                    catch
-                    {
-                        chattings[id.ToString()] = ids["Chattings"][id.ToString()][0];
-                        checkchatting[id.ToString()] = ids["Chattings"][id.ToString()][0];
-                    }
-                }
-                download = checkstring;
             }
             catch
             {
@@ -205,13 +183,10 @@ namespace SWAG_s_chatting
 
         private void ChattingBox_TextChanged(object sender, EventArgs e)
         {
+            //자동 스크롤
             ChattingBox.SelectionStart = ChattingBox.TextLength;
             ChattingBox.ScrollToCaret();
-            test();
-        }
-        private void test()
-        {
-
+            //최적화 (채팅방 하나당 최대 350줄)
             string[] length = ChattingBox.Text.Split('\n');
             int a = length.Length;
             if (a > 350)
@@ -254,8 +229,23 @@ namespace SWAG_s_chatting
 
         }
 
-        private void Timer2_Tick(object sender, EventArgs e)
+        private void Mainform_Leave(object sender, EventArgs e)
         {
+            FormSelected.Checked = false;
+        }
+
+        private void Mainform_Activated(object sender, EventArgs e)
+        {
+            FormSelected.Checked = true;
+        }
+
+        private void Users_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
+            }
+            catch { }
         }
     }
 }

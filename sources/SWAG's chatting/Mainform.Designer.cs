@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.Chatting = new System.Windows.Forms.TabPage();
+            this.NoInter = new MetroFramework.Controls.MetroCheckBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.OpenRemoveForm = new MetroFramework.Controls.MetroButton();
             this.ChattingBox = new System.Windows.Forms.TextBox();
             this.InsertChat = new MetroFramework.Controls.MetroTextBox();
             this.OpenMakeForm = new MetroFramework.Controls.MetroButton();
             this.Send = new MetroFramework.Controls.MetroButton();
-            this.Users = new System.Windows.Forms.ListBox();
             this.Internet = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Reload = new MetroFramework.Controls.MetroButton();
@@ -51,6 +51,8 @@
             this.회원탈퇴 = new MetroFramework.Controls.MetroButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.FormSelected = new MetroFramework.Controls.MetroCheckBox();
+            this.Users = new System.Windows.Forms.ListBox();
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -73,18 +75,29 @@
             // 
             // Chatting
             // 
+            this.Chatting.Controls.Add(this.Users);
+            this.Chatting.Controls.Add(this.NoInter);
             this.Chatting.Controls.Add(this.metroButton1);
             this.Chatting.Controls.Add(this.OpenRemoveForm);
             this.Chatting.Controls.Add(this.ChattingBox);
             this.Chatting.Controls.Add(this.InsertChat);
             this.Chatting.Controls.Add(this.OpenMakeForm);
             this.Chatting.Controls.Add(this.Send);
-            this.Chatting.Controls.Add(this.Users);
             this.Chatting.Location = new System.Drawing.Point(4, 41);
             this.Chatting.Name = "Chatting";
             this.Chatting.Size = new System.Drawing.Size(1148, 546);
             this.Chatting.TabIndex = 0;
             this.Chatting.Text = "채팅";
+            // 
+            // NoInter
+            // 
+            this.NoInter.AutoSize = true;
+            this.NoInter.Location = new System.Drawing.Point(216, 527);
+            this.NoInter.Name = "NoInter";
+            this.NoInter.Size = new System.Drawing.Size(101, 15);
+            this.NoInter.TabIndex = 20;
+            this.NoInter.Text = "방해 금지 모드";
+            this.NoInter.UseSelectable = true;
             // 
             // metroButton1
             // 
@@ -177,18 +190,6 @@
             this.Send.Text = "보내기";
             this.Send.UseSelectable = true;
             this.Send.Click += new System.EventHandler(this.Send_Click);
-            // 
-            // Users
-            // 
-            this.Users.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Users.FormattingEnabled = true;
-            this.Users.ItemHeight = 12;
-            this.Users.Location = new System.Drawing.Point(47, 13);
-            this.Users.Name = "Users";
-            this.Users.Size = new System.Drawing.Size(126, 508);
-            this.Users.TabIndex = 9;
-            this.Users.SelectedIndexChanged += new System.EventHandler(this.Users_SelectedIndexChanged);
             // 
             // Internet
             // 
@@ -336,18 +337,44 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick);
             // 
+            // FormSelected
+            // 
+            this.FormSelected.AutoSize = true;
+            this.FormSelected.Location = new System.Drawing.Point(357, 628);
+            this.FormSelected.Name = "FormSelected";
+            this.FormSelected.Size = new System.Drawing.Size(95, 15);
+            this.FormSelected.TabIndex = 11;
+            this.FormSelected.Text = "FormSelected";
+            this.FormSelected.UseSelectable = true;
+            this.FormSelected.Visible = false;
+            // 
+            // Users
+            // 
+            this.Users.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Users.FormattingEnabled = true;
+            this.Users.ItemHeight = 12;
+            this.Users.Location = new System.Drawing.Point(47, 14);
+            this.Users.Name = "Users";
+            this.Users.Size = new System.Drawing.Size(150, 508);
+            this.Users.TabIndex = 21;
+            this.Users.SelectedIndexChanged += new System.EventHandler(this.Users_SelectedIndexChanged_1);
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1198, 669);
+            this.Controls.Add(this.FormSelected);
             this.Controls.Add(this.metroTabControl1);
             this.Font = new System.Drawing.Font("굴림", 9F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.Name = "Mainform";
             this.Padding = new System.Windows.Forms.Padding(21, 60, 21, 18);
+            this.Activated += new System.EventHandler(this.Mainform_Activated);
+            this.Deactivate += new System.EventHandler(this.Mainform_Leave);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
             this.metroTabControl1.ResumeLayout(false);
             this.Chatting.ResumeLayout(false);
@@ -356,6 +383,7 @@
             this.Internet.PerformLayout();
             this.Setting.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -365,7 +393,6 @@
         private System.Windows.Forms.TabPage Internet;
         private System.Windows.Forms.TabPage Setting;
         private MetroFramework.Controls.MetroButton Send;
-        private System.Windows.Forms.ListBox Users;
         private MetroFramework.Controls.MetroButton Go;
         private MetroFramework.Controls.MetroButton Next;
         private MetroFramework.Controls.MetroButton Back;
@@ -382,5 +409,8 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton OpenRemoveForm;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroCheckBox NoInter;
+        private MetroFramework.Controls.MetroCheckBox FormSelected;
+        private System.Windows.Forms.ListBox Users;
     }
 }
