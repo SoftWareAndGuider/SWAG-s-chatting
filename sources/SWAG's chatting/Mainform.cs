@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net;
 using System.Text;
-using System.Collections;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using CefSharp;
@@ -115,7 +114,11 @@ namespace SWAG_s_chatting
                         }
                         i++;
                     }
-                    if (i == 0) Users.Items.Clear();
+                    if (i == 0)
+                    {
+                        Users.Items.Clear();
+                        chattings = new JObject();
+                    }
                     if (chattings != checkchatting)
                     {
                         notifyIcon1.BalloonTipTitle = id;
@@ -196,12 +199,13 @@ namespace SWAG_s_chatting
             if (a > 350)
             {
                 string print = "";
-                for (int b = a - 350; b <= a; b++)
+                for (int b = a - 351; b >= a - 1; b++)
                 {
                     print += length[b];
                 }
                 ChattingBox.Text = print;
             }
+            label1.Text = length.Length.ToString();
         }
         private void loading()
         {

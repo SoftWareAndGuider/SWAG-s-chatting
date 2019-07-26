@@ -34,7 +34,6 @@
             this.Chatting = new System.Windows.Forms.TabPage();
             this.Users = new System.Windows.Forms.ListBox();
             this.NoInter = new MetroFramework.Controls.MetroCheckBox();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.OpenRemoveForm = new MetroFramework.Controls.MetroButton();
             this.ChattingBox = new System.Windows.Forms.TextBox();
             this.InsertChat = new MetroFramework.Controls.MetroTextBox();
@@ -53,6 +52,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.FormSelected = new MetroFramework.Controls.MetroCheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -76,9 +76,9 @@
             // 
             // Chatting
             // 
+            this.Chatting.Controls.Add(this.label1);
             this.Chatting.Controls.Add(this.Users);
             this.Chatting.Controls.Add(this.NoInter);
-            this.Chatting.Controls.Add(this.metroButton1);
             this.Chatting.Controls.Add(this.OpenRemoveForm);
             this.Chatting.Controls.Add(this.ChattingBox);
             this.Chatting.Controls.Add(this.InsertChat);
@@ -104,6 +104,7 @@
             // 
             // NoInter
             // 
+            this.NoInter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.NoInter.AutoSize = true;
             this.NoInter.Location = new System.Drawing.Point(216, 527);
             this.NoInter.Name = "NoInter";
@@ -111,17 +112,6 @@
             this.NoInter.TabIndex = 20;
             this.NoInter.Text = "방해 금지 모드";
             this.NoInter.UseSelectable = true;
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroButton1.AutoSize = true;
-            this.metroButton1.Location = new System.Drawing.Point(1067, 498);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(44, 23);
-            this.metroButton1.TabIndex = 19;
-            this.metroButton1.Text = "삭제";
-            this.metroButton1.UseSelectable = true;
             // 
             // OpenRemoveForm
             // 
@@ -141,6 +131,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ChattingBox.BackColor = System.Drawing.Color.White;
             this.ChattingBox.Location = new System.Drawing.Point(215, 13);
+            this.ChattingBox.MaxLength = 2147483647;
             this.ChattingBox.Multiline = true;
             this.ChattingBox.Name = "ChattingBox";
             this.ChattingBox.ReadOnly = true;
@@ -199,7 +190,7 @@
             this.Send.AutoSize = true;
             this.Send.Location = new System.Drawing.Point(1001, 498);
             this.Send.Name = "Send";
-            this.Send.Size = new System.Drawing.Size(60, 23);
+            this.Send.Size = new System.Drawing.Size(110, 23);
             this.Send.TabIndex = 12;
             this.Send.Text = "보내기";
             this.Send.UseSelectable = true;
@@ -366,6 +357,15 @@
             this.FormSelected.UseSelectable = true;
             this.FormSelected.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1002, 527);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 12);
+            this.label1.TabIndex = 22;
+            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -414,10 +414,10 @@
         private System.Windows.Forms.TextBox ChattingBox;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private MetroFramework.Controls.MetroButton OpenRemoveForm;
-        private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroCheckBox NoInter;
         private MetroFramework.Controls.MetroCheckBox FormSelected;
         private MetroFramework.Controls.MetroButton Nickname;
         private System.Windows.Forms.ListBox Users;
+        private System.Windows.Forms.Label label1;
     }
 }
