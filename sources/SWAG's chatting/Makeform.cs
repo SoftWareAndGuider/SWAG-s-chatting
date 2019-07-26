@@ -42,8 +42,8 @@ namespace SWAG_s_chatting
             client.Encoding = Encoding.UTF8;
             download = client.DownloadString(url);
             jObject = JObject.Parse(download);
-            rooms = JObject.Parse(jObject["Chattings"].ToString());
-            people = JObject.Parse(jObject["Users"].ToString());
+            rooms = JObject.FromObject(jObject["Chattings"]);
+            people = JObject.FromObject(jObject["Users"]);
             bool i = true;
             JArray array = new JArray();
             try
@@ -96,8 +96,8 @@ namespace SWAG_s_chatting
             client.Encoding = Encoding.UTF8;
             download = client.DownloadString(url);
             jObject = JObject.Parse(download);
-            rooms = JObject.Parse(jObject["Chattings"].ToString());
-            people = JObject.Parse(jObject["Users"].ToString());
+            rooms = JObject.FromObject(jObject["Chattings"]);
+            people = JObject.FromObject(jObject["Users"]);
             bool i = true;
             JArray array = JArray.Parse(jObject["Users"][id]["chatting"].ToString());
             foreach (var room in rooms)
@@ -217,13 +217,13 @@ namespace SWAG_s_chatting
 
         private void MetroTextBox1_TextChanged(object sender, EventArgs e)
         {
-            var items = MakeInvite.Items;
             MakeInvite.Items.Clear();
-            foreach(var item in items)
+            foreach (var person in people)
             {
-                if (item.ToString().Contains(MakeSearchword.Text))
+                if (person.Key.Contains(MakeSearchword.Text) || String.IsNullOrEmpty(MakeSearchword.Text))
                 {
-                    MakeInvite.Items.Add(item);
+                    MakeInvite.Items.Add(person.Key);
+                    MakeInvite.Items.Remove(id);
                 }
             }
         }

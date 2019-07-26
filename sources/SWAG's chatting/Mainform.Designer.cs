@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mainform));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.Chatting = new System.Windows.Forms.TabPage();
+            this.Users = new System.Windows.Forms.ListBox();
             this.NoInter = new MetroFramework.Controls.MetroCheckBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.OpenRemoveForm = new MetroFramework.Controls.MetroButton();
@@ -47,12 +48,11 @@
             this.Back = new MetroFramework.Controls.MetroButton();
             this.InsertURL = new MetroFramework.Controls.MetroTextBox();
             this.Setting = new System.Windows.Forms.TabPage();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.회원탈퇴 = new MetroFramework.Controls.MetroButton();
+            this.Nickname = new MetroFramework.Controls.MetroButton();
+            this.Exit = new MetroFramework.Controls.MetroButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.FormSelected = new MetroFramework.Controls.MetroCheckBox();
-            this.Users = new System.Windows.Forms.ListBox();
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -70,6 +70,7 @@
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1156, 591);
+            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTabControl1.TabIndex = 9;
             this.metroTabControl1.UseSelectable = true;
             // 
@@ -88,6 +89,18 @@
             this.Chatting.Size = new System.Drawing.Size(1148, 546);
             this.Chatting.TabIndex = 0;
             this.Chatting.Text = "채팅";
+            // 
+            // Users
+            // 
+            this.Users.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.Users.FormattingEnabled = true;
+            this.Users.ItemHeight = 12;
+            this.Users.Location = new System.Drawing.Point(47, 14);
+            this.Users.Name = "Users";
+            this.Users.Size = new System.Drawing.Size(150, 508);
+            this.Users.TabIndex = 21;
+            this.Users.SelectedIndexChanged += new System.EventHandler(this.Users_SelectedIndexChanged_1);
             // 
             // NoInter
             // 
@@ -119,6 +132,7 @@
             this.OpenRemoveForm.TabIndex = 18;
             this.OpenRemoveForm.Text = "-";
             this.OpenRemoveForm.UseSelectable = true;
+            this.OpenRemoveForm.Click += new System.EventHandler(this.OpenRemoveForm_Click);
             // 
             // ChattingBox
             // 
@@ -213,7 +227,7 @@
             this.panel1.AutoSize = true;
             this.panel1.Location = new System.Drawing.Point(17, 53);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1074, 458);
+            this.panel1.Size = new System.Drawing.Size(1116, 458);
             this.panel1.TabIndex = 12;
             // 
             // Reload
@@ -292,35 +306,39 @@
             // 
             // Setting
             // 
-            this.Setting.Controls.Add(this.metroButton2);
-            this.Setting.Controls.Add(this.회원탈퇴);
+            this.Setting.Controls.Add(this.Nickname);
+            this.Setting.Controls.Add(this.Exit);
             this.Setting.Location = new System.Drawing.Point(4, 41);
             this.Setting.Name = "Setting";
             this.Setting.Size = new System.Drawing.Size(1148, 546);
             this.Setting.TabIndex = 2;
             this.Setting.Text = "설정";
             // 
-            // metroButton2
+            // Nickname
             // 
-            this.metroButton2.Location = new System.Drawing.Point(12, 204);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(1120, 151);
-            this.metroButton2.TabIndex = 1;
-            this.metroButton2.Text = "metroButton2";
-            this.metroButton2.UseSelectable = true;
-            // 
-            // 회원탈퇴
-            // 
-            this.회원탈퇴.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.Nickname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.회원탈퇴.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.회원탈퇴.Location = new System.Drawing.Point(12, 363);
-            this.회원탈퇴.Name = "회원탈퇴";
-            this.회원탈퇴.Size = new System.Drawing.Size(1120, 151);
-            this.회원탈퇴.TabIndex = 0;
-            this.회원탈퇴.Text = "회원탈퇴";
-            this.회원탈퇴.UseSelectable = true;
-            this.회원탈퇴.Click += new System.EventHandler(this.MetroButton1_Click);
+            this.Nickname.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.Nickname.Location = new System.Drawing.Point(580, 363);
+            this.Nickname.Name = "Nickname";
+            this.Nickname.Size = new System.Drawing.Size(552, 151);
+            this.Nickname.TabIndex = 1;
+            this.Nickname.Text = "별명 설정";
+            this.Nickname.UseSelectable = true;
+            this.Nickname.Click += new System.EventHandler(this.Nickname_Click);
+            // 
+            // Exit
+            // 
+            this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Exit.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.Exit.Location = new System.Drawing.Point(12, 363);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(552, 151);
+            this.Exit.TabIndex = 0;
+            this.Exit.Text = "회원탈퇴";
+            this.Exit.UseSelectable = true;
+            this.Exit.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
             // timer1
             // 
@@ -348,18 +366,6 @@
             this.FormSelected.UseSelectable = true;
             this.FormSelected.Visible = false;
             // 
-            // Users
-            // 
-            this.Users.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.Users.FormattingEnabled = true;
-            this.Users.ItemHeight = 12;
-            this.Users.Location = new System.Drawing.Point(47, 14);
-            this.Users.Name = "Users";
-            this.Users.Size = new System.Drawing.Size(150, 508);
-            this.Users.TabIndex = 21;
-            this.Users.SelectedIndexChanged += new System.EventHandler(this.Users_SelectedIndexChanged_1);
-            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -373,6 +379,7 @@
             this.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.Name = "Mainform";
             this.Padding = new System.Windows.Forms.Padding(21, 60, 21, 18);
+            this.Style = MetroFramework.MetroColorStyle.Lime;
             this.Activated += new System.EventHandler(this.Mainform_Activated);
             this.Deactivate += new System.EventHandler(this.Mainform_Leave);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Mainform_FormClosing);
@@ -397,7 +404,7 @@
         private MetroFramework.Controls.MetroButton Next;
         private MetroFramework.Controls.MetroButton Back;
         private MetroFramework.Controls.MetroTextBox InsertURL;
-        private MetroFramework.Controls.MetroButton 회원탈퇴;
+        private MetroFramework.Controls.MetroButton Exit;
         private MetroFramework.Controls.MetroButton Reload;
         private CefSharp.WinForms.ChromiumWebBrowser Browser;
         private System.Windows.Forms.Panel panel1;
@@ -406,11 +413,11 @@
         private MetroFramework.Controls.MetroTextBox InsertChat;
         private System.Windows.Forms.TextBox ChattingBox;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroButton OpenRemoveForm;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroCheckBox NoInter;
         private MetroFramework.Controls.MetroCheckBox FormSelected;
+        private MetroFramework.Controls.MetroButton Nickname;
         private System.Windows.Forms.ListBox Users;
     }
 }

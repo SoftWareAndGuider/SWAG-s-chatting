@@ -198,6 +198,7 @@
             this.InsertInsert.Location = new System.Drawing.Point(288, 83);
             this.InsertInsert.Name = "InsertInsert";
             this.InsertInsert.Size = new System.Drawing.Size(210, 49);
+            this.InsertInsert.Style = MetroFramework.MetroColorStyle.Blue;
             this.InsertInsert.TabIndex = 3;
             this.InsertInsert.Text = "가입하기";
             this.InsertInsert.UseSelectable = true;
@@ -421,6 +422,7 @@
             this.metroButton1.Location = new System.Drawing.Point(263, 130);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(243, 48);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroButton1.TabIndex = 2;
             this.metroButton1.Text = "만들기";
             this.metroButton1.UseSelectable = true;
@@ -439,7 +441,7 @@
             this.MaximizeBox = false;
             this.Name = "Makeform";
             this.Resizable = false;
-            this.Text = "Makeform";
+            this.Text = "채팅방 추가하기";
             this.Load += new System.EventHandler(this.Makeform_Load);
             this.InsertPanel.ResumeLayout(false);
             this.InsertPanel.PerformLayout();

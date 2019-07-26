@@ -73,7 +73,7 @@ namespace SWAG_s_chatting
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            JObject Users = JObject.Parse(ids["Users"].ToString());
+            JObject Users = JObject.FromObject(ids["Users"]);
             Users.Remove(id);
             ids["Users"] = Users;
             client.Headers.Add("Content-Type", "Application/json");
@@ -98,6 +98,7 @@ namespace SWAG_s_chatting
                 try
                 {
                     ids = JObject.Parse(download);
+                    int i = 0;
                     foreach (var id in ids["Users"][id]["chatting"])
                     {
                         if (!Users.Items.Contains(id))
@@ -112,7 +113,9 @@ namespace SWAG_s_chatting
                         {
                             chattings[id.ToString()] = ids["Chattings"][id.ToString()][0];
                         }
+                        i++;
                     }
+                    if (i == 0) Users.Items.Clear();
                     if (chattings != checkchatting)
                     {
                         notifyIcon1.BalloonTipTitle = id;
@@ -132,6 +135,7 @@ namespace SWAG_s_chatting
                 }
                 catch
                 {
+                    Users.Items.Clear();
                 }
             }
         }
@@ -246,6 +250,17 @@ namespace SWAG_s_chatting
                 ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
             }
             catch { }
+        }
+
+        private void Nickname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenRemoveForm_Click(object sender, EventArgs e)
+        {
+            DeleteForm deleteForm = new DeleteForm();
+            deleteForm.Show();
         }
     }
 }
