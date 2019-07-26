@@ -6,9 +6,11 @@
 
 1. JSON파일을 저장할 곳을 인터넷에 만들어서 URL을 얻어주세요.
 
-2. 그것을 /sources/SWAG's chatting/bin/x64/Debug에서 URL.txt란 파일을 만들어 넣어주세요.
+2. 그리고 JSON파일을 저장할 곳에 /필요한 것들 폴더에 있는 JSON서버에 저장.json을 복사해서 붙여넣어주세요
 
-3. SWAG's chatting.exe를 실행해주세요.
+3. 얻은 URL을 /sources/SWAG's chatting/bin/x64/Debug에서 URL.txt란 파일을 만들어 넣어주세요.
+
+4. SWAG's chatting.exe를 실행해주세요.
 
 주의사항
  * 이 프로그램은 64비트만 지원합니다 32비트는 **지원하지 않습니다** .
