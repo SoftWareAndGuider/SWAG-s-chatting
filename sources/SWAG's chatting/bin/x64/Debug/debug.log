@@ -659,3 +659,6 @@ a=ssrc:2634296087 mslabel:-
 a=ssrc:2634296087 label:
 
 [0726/155404.543:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.
+[0728/090302.497:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0728/090307.517:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0728/090312.526:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.

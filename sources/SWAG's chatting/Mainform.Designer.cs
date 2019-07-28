@@ -52,7 +52,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.FormSelected = new MetroFramework.Controls.MetroCheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.metroTabControl1.SuspendLayout();
             this.Chatting.SuspendLayout();
             this.Internet.SuspendLayout();
@@ -76,7 +75,6 @@
             // 
             // Chatting
             // 
-            this.Chatting.Controls.Add(this.label1);
             this.Chatting.Controls.Add(this.Users);
             this.Chatting.Controls.Add(this.NoInter);
             this.Chatting.Controls.Add(this.OpenRemoveForm);
@@ -357,15 +355,6 @@
             this.FormSelected.UseSelectable = true;
             this.FormSelected.Visible = false;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1002, 527);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 12);
-            this.label1.TabIndex = 22;
-            // 
             // Mainform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -418,6 +407,5 @@
         private MetroFramework.Controls.MetroCheckBox FormSelected;
         private MetroFramework.Controls.MetroButton Nickname;
         private System.Windows.Forms.ListBox Users;
-        private System.Windows.Forms.Label label1;
     }
 }

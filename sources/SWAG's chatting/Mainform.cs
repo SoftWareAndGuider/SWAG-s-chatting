@@ -199,13 +199,12 @@ namespace SWAG_s_chatting
             if (a > 350)
             {
                 string print = "";
-                for (int b = a - 351; b >= a - 1; b++)
+                for (int b = a - 341; b < a - 1; b++)
                 {
-                    print += length[b];
+                    print += length[b] + "\r\n";
                 }
                 ChattingBox.Text = print;
             }
-            label1.Text = length.Length.ToString();
         }
         private void loading()
         {
