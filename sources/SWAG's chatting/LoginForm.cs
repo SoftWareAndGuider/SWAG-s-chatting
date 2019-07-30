@@ -88,37 +88,8 @@ namespace SWAG_s_chatting
 
         private void MetroButton1_Click(object sender, EventArgs e)
         {
-            if (!(String.IsNullOrEmpty(InsertID.Text) || String.IsNullOrEmpty(InsertPW.Text)))
-            {
-                string download = client.DownloadString(url);
-                JObject ids = JObject.Parse(download);
-                try
-                {
-                    string test = ids["Users"][InsertID.Text].ToString();
-                    MessageBox.Show("이 ID는 중복됩니다","중복");
-                }
-                catch
-                {
-                    string password = gotohash(InsertPW.Text);
-                    JArray jArray = new JArray();
-                    jArray.Add(password);
-                    JObject newid = new JObject();
-                    newid.Add("chatting", "");
-                    newid.Add("Login", jArray);
-                    JObject Users = JObject.Parse(ids["Users"].ToString());
-                    Users.Add(InsertID.Text, newid);
-                    ids["Users"] =  Users;
-                    string upload = ids.ToString();
-                    client.Headers.Add("Content-Type", "application/json");
-                    client.UploadString(url,"Put",upload);
-                    MessageBox.Show("ID생성이 완료되었습니다", "완료");
-                    task();
-                }
-            }
-            else
-            {
-                MessageBox.Show("ID와 비밀번호를 입력 후 재시도 해 주세요","비어 있음");
-            }
+            SignUpForm signUpForm = new SignUpForm();
+            signUpForm.Show();
         }
     }
 }
