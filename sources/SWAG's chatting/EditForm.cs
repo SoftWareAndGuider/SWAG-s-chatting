@@ -22,8 +22,8 @@ namespace SWAG_s_chatting
             string url = File.ReadAllText("URL.txt");
             string download = client.DownloadString(url);
             JObject all = JObject.Parse(download);
-            JArray users = all["Users"][id] as JArray;
-            if (loginForm.gotohash(PW.Text) != users[0].ToString())
+            JArray users = all["Users"][id]["Login"] as JArray;
+            if (loginForm.gotohash(PPW.Text) != users[0].ToString())
             {
                 MessageBox.Show("현재 비밀번호를 다시 입력해 주세요");
             }
@@ -49,7 +49,7 @@ namespace SWAG_s_chatting
                 {
                     users[2] = SW.Text;
                 }
-                all["Users"][id] = users;
+                all["Users"][id]["Login"] = users;
                 client.Headers.Add("Content-Type", "application/json");
                 client.UploadString(url,"PUT",all.ToString());
                 MessageBox.Show("수정이 완료되었습니다","완료");

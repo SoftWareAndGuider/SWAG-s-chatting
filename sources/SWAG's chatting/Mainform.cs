@@ -13,6 +13,7 @@ namespace SWAG_s_chatting
     public partial class Mainform : MetroFramework.Forms.MetroForm
     {
         public static string id;
+        string nickname;
         private string url = File.ReadAllText("URL.txt");
         private static WebClient client = new WebClient();
         private static JObject ids = new JObject();
@@ -155,7 +156,7 @@ namespace SWAG_s_chatting
                 {
                     string text = InsertChat.Text;
                     InsertChat.Text = "";
-                    chattings[Users.SelectedItem.ToString()] = $"{ChattingBox.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{text}\r\n\r\n";
+                    chattings[Users.SelectedItem.ToString()] = $"{ChattingBox.Text}{nickname} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{text}\r\n\r\n";
                     ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
                     ids["Chattings"][Users.SelectedItem.ToString()][0] = chattings[Users.SelectedItem.ToString()].ToString();
                     client.Encoding = Encoding.UTF8;
@@ -228,6 +229,7 @@ namespace SWAG_s_chatting
                     string a = chattings.ToString();
                     checkchatting = JObject.Parse(a);
                 }
+                nickname = ids["Users"][id]["Login"][1].ToString();
             }
             catch
             {

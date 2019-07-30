@@ -92,5 +92,11 @@ namespace SWAG_s_chatting
             SignUpForm signUpForm = new SignUpForm();
             signUpForm.Show();
         }
+
+        private void RSP_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ResetPasswordForm resetPasswordForm = new ResetPasswordForm();
+            resetPasswordForm.Show();
+        }
     }
 }

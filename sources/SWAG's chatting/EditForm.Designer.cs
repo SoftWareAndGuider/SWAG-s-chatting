@@ -74,7 +74,7 @@
             this.NM.Location = new System.Drawing.Point(25, 207);
             this.NM.Name = "NM";
             this.NM.Size = new System.Drawing.Size(261, 21);
-            this.NM.TabIndex = 3;
+            this.NM.TabIndex = 2;
             // 
             // label3
             // 
@@ -91,7 +91,7 @@
             this.SW.Location = new System.Drawing.Point(25, 264);
             this.SW.Name = "SW";
             this.SW.Size = new System.Drawing.Size(261, 21);
-            this.SW.TabIndex = 5;
+            this.SW.TabIndex = 3;
             // 
             // label4
             // 
@@ -109,7 +109,7 @@
             this.CPW.Name = "CPW";
             this.CPW.PasswordChar = '*';
             this.CPW.Size = new System.Drawing.Size(261, 21);
-            this.CPW.TabIndex = 7;
+            this.CPW.TabIndex = 1;
             // 
             // label5
             // 
@@ -127,7 +127,7 @@
             this.PPW.Name = "PPW";
             this.PPW.PasswordChar = '*';
             this.PPW.Size = new System.Drawing.Size(261, 21);
-            this.PPW.TabIndex = 9;
+            this.PPW.TabIndex = 4;
             // 
             // metroButton1
             // 
@@ -135,7 +135,7 @@
             this.metroButton1.Location = new System.Drawing.Point(26, 363);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(260, 50);
-            this.metroButton1.TabIndex = 10;
+            this.metroButton1.TabIndex = 5;
             this.metroButton1.Text = "적용";
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
@@ -156,7 +156,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PW);
+            this.MaximizeBox = false;
             this.Name = "EditForm";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Brown;
             this.Text = "내 정보 수정";
             this.ResumeLayout(false);

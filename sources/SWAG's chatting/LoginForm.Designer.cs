@@ -33,6 +33,7 @@
             this.InsertID = new MetroFramework.Controls.MetroTextBox();
             this.InsertPW = new MetroFramework.Controls.MetroTextBox();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.RSP = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // Login
@@ -133,11 +134,24 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
+            // RSP
+            // 
+            this.RSP.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.RSP.AutoSize = true;
+            this.RSP.Location = new System.Drawing.Point(12, 73);
+            this.RSP.Name = "RSP";
+            this.RSP.Size = new System.Drawing.Size(81, 12);
+            this.RSP.TabIndex = 4;
+            this.RSP.TabStop = true;
+            this.RSP.Text = "비밀번호 찾기";
+            this.RSP.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.RSP_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 79);
+            this.ClientSize = new System.Drawing.Size(477, 94);
+            this.Controls.Add(this.RSP);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.InsertPW);
             this.Controls.Add(this.InsertID);
@@ -149,6 +163,7 @@
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -158,6 +173,7 @@
         private MetroFramework.Controls.MetroTextBox InsertID;
         private MetroFramework.Controls.MetroTextBox InsertPW;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private System.Windows.Forms.LinkLabel RSP;
     }
 }
 

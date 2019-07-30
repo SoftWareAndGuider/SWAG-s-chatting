@@ -698,3 +698,83 @@ a=ssrc:3699574338 mslabel:-
 a=ssrc:3699574338 label:
 
 [0730/160107.594:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.
+[0730/171824.157:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 104 to 127
+[0730/171824.157:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 106 to 125
+[0730/171824.157:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 110 to 124
+[0730/171824.157:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 103 to 123
+[0730/171824.157:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 105 to 122
+[0730/171824.158:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 109 to 121
+[0730/171824.196:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/171824.197:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/171824.197:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/171824.197:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/171824.197:ERROR:rtc_peer_connection_handler.cc(2225)] Failed to create native session description. Type: offer SDP: v=0
+o=- 6410450420901178989 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0
+a=msid-semantic: WMS
+m=application 9 UDP/TLS/RTP/SAVPF 121
+c=IN IP4 0.0.0.0
+b=AS:30
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:TOBq
+a=ice-pwd:xkUw1opExjpZ+3YFdPDcnKXI
+a=ice-options:trickle
+a=fingerprint:sha-256 FF:20:1C:0F:AC:47:98:CC:83:50:2E:38:4B:B5:BD:D5:C6:F5:DE:0E:90:61:8E:D7:8A:23:3E:AF:BF:E2:7D:A8
+a=setup:actpass
+a=mid:0
+a=sendrecv
+a=msid: 
+a=rtcp-mux
+a=rtpmap:121 google-data/90000
+a=ssrc:3572519347 cname:u4wVSahN4GX2/4py
+a=ssrc:3572519347 msid:- 
+a=ssrc:3572519347 mslabel:-
+a=ssrc:3572519347 label:
+
+[0730/171824.197:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.
+[0730/172339.517:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 104 to 127
+[0730/172339.518:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 106 to 125
+[0730/172339.518:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 110 to 124
+[0730/172339.518:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 103 to 123
+[0730/172339.518:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 105 to 122
+[0730/172339.518:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 109 to 121
+[0730/172339.567:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/172339.567:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/172339.568:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/172339.568:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/172339.568:ERROR:rtc_peer_connection_handler.cc(2225)] Failed to create native session description. Type: offer SDP: v=0
+o=- 4016517372835228018 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0
+a=msid-semantic: WMS
+m=application 9 UDP/TLS/RTP/SAVPF 121
+c=IN IP4 0.0.0.0
+b=AS:30
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:nnM0
+a=ice-pwd:3CGmtWbvgNE9BJqq8ePjqvCj
+a=ice-options:trickle
+a=fingerprint:sha-256 A3:E3:A5:9F:92:DB:76:F8:41:F7:9F:A9:59:AF:D4:5B:B5:65:10:52:EF:06:FA:0F:48:35:E0:A9:21:B8:4A:BB
+a=setup:actpass
+a=mid:0
+a=sendrecv
+a=msid: 
+a=rtcp-mux
+a=rtpmap:121 google-data/90000
+a=ssrc:3104151273 cname:X8p+8gN2gMby0o49
+a=ssrc:3104151273 msid:- 
+a=ssrc:3104151273 mslabel:-
+a=ssrc:3104151273 label:
+
+[0730/172339.568:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.
+[0730/172349.659:INFO:CONSOLE(0)] "HTML Imports is deprecated and will be removed in M73, around March 2019. Please use ES modules instead. See https://www.chromestatus.com/features/5144752345317376 for more details.", source:  (0)
+[0730/172350.433:INFO:CONSOLE(0)] "Refused to display 'https://accounts.google.com/ServiceLogin?continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fapp%3Ddesktop%26action_handle_signin%3Dtrue%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&passive=true&service=youtube&uilel=3&hl=en' in a frame because it set 'X-Frame-Options' to 'deny'.", source: https://www.youtube.com/ (0)
+[0730/172350.440:ERROR:browser_host_impl.cc(1726)] Invalid URL passed to CefBrowserHostImpl::LoadURL: www.google.com/search?q=https://www.youtube.com/
+[0730/172351.074:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0730/172351.661:WARNING:url_request_job_manager.cc(91)] Failed to map: chrome-extension://invalid/
+[0730/172352.166:INFO:CONSOLE(1594)] "<link rel=preload> must have a valid `as` value", source: https://www.youtube.com/yts/jsbin/desktop_polymer_sel_auto_svg_home_v2-vflzdyRgD/desktop_polymer_sel_auto_svg_home_v2.js (1594)
+[0730/172352.462:INFO:CONSOLE(15)] "chrome.loadTimes() is deprecated, instead use standardized API: nextHopProtocol in Navigation Timing 2. https://www.chromestatus.com/features/5637885046816768.", source: https://www.youtube.com/yts/jsbin/network-vfl3EpVxj/network.js (15)
+[0730/172356.188:INFO:CONSOLE(0)] "The resource https://i.ytimg.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally.", source:  (0)
