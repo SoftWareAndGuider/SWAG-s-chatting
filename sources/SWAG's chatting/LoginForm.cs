@@ -53,6 +53,7 @@ namespace SWAG_s_chatting
                     Mainform.id = ID;
                     Makeform.id = ID;
                     DeleteForm.id = ID;
+                    EditForm.id = ID;
                     Hide();
                     Mainform mainform = new Mainform();
                     mainform.Show();

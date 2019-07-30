@@ -662,3 +662,39 @@ a=ssrc:2634296087 label:
 [0728/090302.497:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
 [0728/090307.517:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
 [0728/090312.526:WARNING:dns_config_service_win.cc(665)] Failed to read DnsConfig.
+[0730/160107.511:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 104 to 127
+[0730/160107.512:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 106 to 125
+[0730/160107.512:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 110 to 124
+[0730/160107.512:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 103 to 123
+[0730/160107.512:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 105 to 122
+[0730/160107.512:WARNING:media_session.cc(334)] Duplicate id found. Reassigning from 109 to 121
+[0730/160107.594:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/160107.594:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/160107.594:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/160107.594:ERROR:webrtc_sdp.cc(406)] Failed to parse: "a=msid: ". Reason: Missing track ID in msid attribute.
+[0730/160107.594:ERROR:rtc_peer_connection_handler.cc(2225)] Failed to create native session description. Type: offer SDP: v=0
+o=- 7574463584272596790 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0
+a=msid-semantic: WMS
+m=application 9 UDP/TLS/RTP/SAVPF 121
+c=IN IP4 0.0.0.0
+b=AS:30
+a=rtcp:9 IN IP4 0.0.0.0
+a=ice-ufrag:RVNb
+a=ice-pwd:ah+Ja+qPtx4hphAVSX20L/ri
+a=ice-options:trickle
+a=fingerprint:sha-256 E7:49:E4:15:53:68:8D:E2:1C:08:B2:7A:6E:E5:22:C1:20:CD:55:72:AA:BF:10:AF:26:B5:DC:41:E6:10:16:4B
+a=setup:actpass
+a=mid:0
+a=sendrecv
+a=msid: 
+a=rtcp-mux
+a=rtpmap:121 google-data/90000
+a=ssrc:3699574338 cname:kwLjnjqQ4majm8uk
+a=ssrc:3699574338 msid:- 
+a=ssrc:3699574338 mslabel:-
+a=ssrc:3699574338 label:
+
+[0730/160107.594:ERROR:rtc_peer_connection_handler.cc(1201)] Failed to parse SessionDescription. a=msid:  Missing track ID in msid attribute.

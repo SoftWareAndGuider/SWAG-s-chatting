@@ -149,20 +149,23 @@ namespace SWAG_s_chatting
         }
         private void SendMessage()
         {
-            try
+            if (!string.IsNullOrEmpty(InsertChat.Text))
             {
-                string text = InsertChat.Text;
-                InsertChat.Text = "";
-                chattings[Users.SelectedItem.ToString()] = $"{ChattingBox.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{text}\r\n\r\n";
-                ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
-                ids["Chattings"][Users.SelectedItem.ToString()][0] = chattings[Users.SelectedItem.ToString()].ToString();
-                client.Encoding = Encoding.UTF8;
-                client.Headers.Add("Content-Type", "application/json");
-                client.UploadString(url, "PUT", ids.ToString());
-            }
-            catch
-            {
-                MessageBox.Show("메세지를 보낼 사람을 선택해 주세요");
+                try
+                {
+                    string text = InsertChat.Text;
+                    InsertChat.Text = "";
+                    chattings[Users.SelectedItem.ToString()] = $"{ChattingBox.Text}{id} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{text}\r\n\r\n";
+                    ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
+                    ids["Chattings"][Users.SelectedItem.ToString()][0] = chattings[Users.SelectedItem.ToString()].ToString();
+                    client.Encoding = Encoding.UTF8;
+                    client.Headers.Add("Content-Type", "application/json");
+                    client.UploadString(url, "PUT", ids.ToString());
+                }
+                catch
+                {
+                    MessageBox.Show("메세지를 보낼 사람을 선택해 주세요");
+                }
             }
         }
 
@@ -255,15 +258,16 @@ namespace SWAG_s_chatting
             catch { }
         }
 
-        private void Nickname_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void OpenRemoveForm_Click(object sender, EventArgs e)
         {
             DeleteForm deleteForm = new DeleteForm();
             deleteForm.Show();
+        }
+
+        private void MetroButton1_Click_2(object sender, EventArgs e)
+        {
+            EditForm editForm = new EditForm();
+            editForm.Show();
         }
     }
 }

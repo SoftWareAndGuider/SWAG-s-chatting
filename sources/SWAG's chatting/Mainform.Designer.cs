@@ -47,7 +47,7 @@
             this.Back = new MetroFramework.Controls.MetroButton();
             this.InsertURL = new MetroFramework.Controls.MetroTextBox();
             this.Setting = new System.Windows.Forms.TabPage();
-            this.Nickname = new MetroFramework.Controls.MetroButton();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.Exit = new MetroFramework.Controls.MetroButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -67,7 +67,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(21, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(1156, 591);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTabControl1.TabIndex = 9;
@@ -295,7 +295,7 @@
             // 
             // Setting
             // 
-            this.Setting.Controls.Add(this.Nickname);
+            this.Setting.Controls.Add(this.metroButton1);
             this.Setting.Controls.Add(this.Exit);
             this.Setting.Location = new System.Drawing.Point(4, 41);
             this.Setting.Name = "Setting";
@@ -303,27 +303,27 @@
             this.Setting.TabIndex = 2;
             this.Setting.Text = "설정";
             // 
-            // Nickname
+            // metroButton1
             // 
-            this.Nickname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.metroButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Nickname.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.Nickname.Location = new System.Drawing.Point(580, 363);
-            this.Nickname.Name = "Nickname";
-            this.Nickname.Size = new System.Drawing.Size(552, 151);
-            this.Nickname.TabIndex = 1;
-            this.Nickname.Text = "별명 설정";
-            this.Nickname.UseSelectable = true;
-            this.Nickname.Click += new System.EventHandler(this.Nickname_Click);
+            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.metroButton1.Location = new System.Drawing.Point(40, 26);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(1069, 210);
+            this.metroButton1.TabIndex = 1;
+            this.metroButton1.Text = "내 정보 수정";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.MetroButton1_Click_2);
             // 
             // Exit
             // 
             this.Exit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Exit.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.Exit.Location = new System.Drawing.Point(12, 363);
+            this.Exit.Location = new System.Drawing.Point(43, 260);
             this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(552, 151);
+            this.Exit.Size = new System.Drawing.Size(1069, 272);
             this.Exit.TabIndex = 0;
             this.Exit.Text = "회원탈퇴";
             this.Exit.UseSelectable = true;
@@ -366,6 +366,7 @@
             this.Font = new System.Drawing.Font("굴림", 9F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.MinimumSize = new System.Drawing.Size(1150, 650);
             this.Name = "Mainform";
             this.Padding = new System.Windows.Forms.Padding(21, 60, 21, 18);
             this.Style = MetroFramework.MetroColorStyle.Lime;
@@ -405,7 +406,7 @@
         private MetroFramework.Controls.MetroButton OpenRemoveForm;
         private MetroFramework.Controls.MetroCheckBox NoInter;
         private MetroFramework.Controls.MetroCheckBox FormSelected;
-        private MetroFramework.Controls.MetroButton Nickname;
         private System.Windows.Forms.ListBox Users;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
