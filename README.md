@@ -16,4 +16,4 @@
  * 이 프로그램은 64비트만 지원합니다 32비트는 **지원하지 않습니다** .
  * 이 프로그램은 서버가 계산을 하지 않고 클라이언트가 모든 계산을 합니다. 따라서 다른 채팅 프로그램 대비 기능이 적고 버벅일 수 있습니다.
  
- Copyright (c) PMH Studio / CS, MIT Licenced
+ Copyright (c)  / CS, MIT Licenced
