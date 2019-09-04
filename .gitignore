@@ -3,5 +3,6 @@
 *.ide
 /sources/SWAG's chatting/bin/
 /sources/SWAG's chatting/obj/
+/sources/packages/
 *.ide-wal
 *.ide-shm
