@@ -17,9 +17,9 @@
 
 개발 주의사항
  * 설치해야 할 Nuget들
-  * CefSharp.Winform
-  * Newtonsoft.JSON
-  * MetroModernUI
+  ** CefSharp.Winform
+  ** Newtonsoft.JSON
+  ** MetroModernUI
  * 개발 플랫폼을 설정해 주세요 (Any CPU 제외)
 
  Copyright (c) SoftWareAndGuider / CS, MIT Licenced
