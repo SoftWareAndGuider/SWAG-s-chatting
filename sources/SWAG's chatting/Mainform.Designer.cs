@@ -49,7 +49,6 @@
             this.Setting = new System.Windows.Forms.TabPage();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.Exit = new MetroFramework.Controls.MetroButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.FormSelected = new MetroFramework.Controls.MetroCheckBox();
             this.metroTabControl1.SuspendLayout();
@@ -67,7 +66,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(21, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(1156, 591);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Lime;
             this.metroTabControl1.TabIndex = 9;
@@ -329,12 +328,6 @@
             this.Exit.UseSelectable = true;
             this.Exit.Click += new System.EventHandler(this.MetroButton1_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.BalloonTipText = "채팅왔습니다.";
@@ -399,7 +392,6 @@
         private CefSharp.WinForms.ChromiumWebBrowser Browser;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroButton OpenMakeForm;
-        private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroTextBox InsertChat;
         private System.Windows.Forms.TextBox ChattingBox;
         private System.Windows.Forms.NotifyIcon notifyIcon1;

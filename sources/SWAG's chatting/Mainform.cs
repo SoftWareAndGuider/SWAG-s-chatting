@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using CefSharp;
@@ -23,12 +24,15 @@ namespace SWAG_s_chatting
         LoginForm Login = new LoginForm();
         Makeform Make = new Makeform();
         private string download;
+        bool stop = false;
 
         public Mainform()
         {
             InitializeComponent();
             startchromium();
             loading();
+            Thread thread = new Thread(new ThreadStart(loop));
+            thread.Start();
         }
         private void startchromium()
         {
@@ -43,6 +47,7 @@ namespace SWAG_s_chatting
 
         private void Mainform_FormClosing(object sender, FormClosingEventArgs e)
         {
+            stop = true;
             Application.Exit();
         }
 
@@ -87,59 +92,64 @@ namespace SWAG_s_chatting
             InsertURL.Text = e.Address;
         }
 
-        private void Timer1_Tick(object sender, EventArgs e)
+        private void loop()
         {
-            client.Encoding = Encoding.UTF8;
-            download = client.DownloadString(url);
-            //이전 값과 현재 값이 다를 때만 실행
-            if (download != checkstring)
+            WebClient client = new WebClient();
+            for(;!stop;)
             {
-                checkstring = download;
-                try
+                Thread.Sleep(100);
+                client.Encoding = Encoding.UTF8;
+                download = client.DownloadString(url);
+                //이전 값과 현재 값이 다를 때만 실행
+                if (download != checkstring)
                 {
-                    ids = JObject.Parse(download);
-                    int i = 0;
-                    foreach (var id in ids["Users"][id]["chatting"])
+                    checkstring = download;
+                    try
                     {
-                        if (!Users.Items.Contains(id))
+                        ids = JObject.Parse(download);
+                        int i = 0;
+                        foreach (var id in ids["Users"][id]["chatting"])
                         {
-                            Users.Items.Add(id);
+                            if (!Users.Items.Contains(id))
+                            {
+                                Users.Items.Add(id);
+                            }
+                            try
+                            {
+                                chattings.Add(id.ToString(), ids["Chattings"][id.ToString()][0]);
+                            }
+                            catch
+                            {
+                                chattings[id.ToString()] = ids["Chattings"][id.ToString()][0];
+                            }
+                            i++;
                         }
-                        try
+                        if (i == 0)
                         {
-                            chattings.Add(id.ToString(), ids["Chattings"][id.ToString()][0]);
+                            Users.Items.Clear();
+                            chattings = new JObject();
                         }
-                        catch
+                        if (chattings != checkchatting)
                         {
-                            chattings[id.ToString()] = ids["Chattings"][id.ToString()][0];
+                            notifyIcon1.BalloonTipTitle = id;
+                            if (!(NoInter.Checked || FormSelected.Checked))
+                            {
+                                notifyIcon1.ShowBalloonTip(500);
+                            }
+                            try
+                            {
+                                ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
+                            }
+                            catch { }
+                            //아래처럼 구문을 짠 이유는 checkchatting = chattings;를 했을 때 checkchatting값을 만지지 않는 구문에서도 chattings와 같아지기 때문임 (난 오른쪽 접시에 과자를 뒀는데 왼쪽 접시에도 과자가 놓인 기분)
+                            string a = chattings.ToString();
+                            checkchatting = JObject.Parse(a);
                         }
-                        i++;
                     }
-                    if (i == 0)
+                    catch
                     {
                         Users.Items.Clear();
-                        chattings = new JObject();
                     }
-                    if (chattings != checkchatting)
-                    {
-                        notifyIcon1.BalloonTipTitle = id;
-                        if (!(NoInter.Checked || FormSelected.Checked))
-                        {
-                            notifyIcon1.ShowBalloonTip(500);
-                        }
-                        try
-                        { 
-                            ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
-                        }
-                        catch { }
-                        //아래처럼 구문을 짠 이유는 checkchatting = chattings;를 했을 때 checkchatting값을 만지지 않는 구문에서도 chattings와 같아지기 때문임 (난 오른쪽 접시에 과자를 뒀는데 왼쪽 접시에도 과자가 놓인 기분)
-                        string a = chattings.ToString();
-                        checkchatting = JObject.Parse(a);
-                    }
-                }
-                catch
-                {
-                    Users.Items.Clear();
                 }
             }
         }
@@ -155,7 +165,7 @@ namespace SWAG_s_chatting
                 try
                 {
                     string text = InsertChat.Text;
-                    InsertChat.Text = "";
+                    InsertChat.Clear();
                     chattings[Users.SelectedItem.ToString()] = $"{ChattingBox.Text}{nickname} {DateTime.Now.Year}년 {DateTime.Now.Month}월 {DateTime.Now.Day}일 {DateTime.Now.Hour}:{DateTime.Now.Minute}\r\n{text}\r\n\r\n";
                     ChattingBox.Text = chattings[Users.SelectedItem.ToString()].ToString();
                     ids["Chattings"][Users.SelectedItem.ToString()][0] = chattings[Users.SelectedItem.ToString()].ToString();
@@ -163,7 +173,7 @@ namespace SWAG_s_chatting
                     client.Headers.Add("Content-Type", "application/json");
                     client.UploadString(url, "PUT", ids.ToString());
                 }
-                catch
+                catch(DivideByZeroException)
                 {
                     MessageBox.Show("메세지를 보낼 사람을 선택해 주세요");
                 }
